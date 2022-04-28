@@ -1,0 +1,5 @@
+error-tags:
+  VSADLG2:
+    packages:
+      - com.exasol.adapter.document.files
+    highest-index: 56
