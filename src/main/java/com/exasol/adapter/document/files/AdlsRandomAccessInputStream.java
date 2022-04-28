@@ -90,7 +90,7 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
 
     private UncheckedIOException getReadFailedException(final IOException exception) {
         return new UncheckedIOException(
-                ExaError.messageBuilder("E-VSABS-8").message("Failed to read from Azure Data Lake Storage Gen 2.").toString(),
+                ExaError.messageBuilder("E-VSADLG2-8").message("Failed to read from Azure Data Lake Storage Gen 2.").toString(),
                 exception);
     }
 }

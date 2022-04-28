@@ -78,7 +78,9 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
     private CloseableIterator<AdlsObjectDescription> getQuickFilteredObjectKeys() {
         final String globFreeKey = this.filePattern.getStaticPrefix();
         ListPathsOptions options = new ListPathsOptions()
-                .setPath(globFreeKey);
+                .setRecursive(true)
+                .setPath(""); // can't filter on this, this has to be an actual path, not a wildcard
+
         final CloseableIterator<PathItem> files = new CloseableIteratorWrapper<>(
                 //TODO: check if it will it work with (nested) directories + filename?
                 //this.dlFileSystemClient.listBlobs(options,null).iterator()
