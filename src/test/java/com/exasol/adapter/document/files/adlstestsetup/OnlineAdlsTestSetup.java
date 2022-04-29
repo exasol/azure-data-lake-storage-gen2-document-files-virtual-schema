@@ -11,8 +11,8 @@ import java.nio.file.Path;
 import java.util.Optional;
 
 public class OnlineAdlsTestSetup implements AdlsTestSetup {
-    private static final String ACCOUNTKEY_FILE = "accountkey";
-    private static final String ACCOUNTNAME_FILE = "accountname";
+    private static final String ACCOUNTKEY_FILE = "accountkey.txt";
+    private static final String ACCOUNTNAME_FILE = "accountname.txt";
     private final DataLakeServiceClient dataLakeServiceClient;
     private final String accountKey;
     private final String accountName;

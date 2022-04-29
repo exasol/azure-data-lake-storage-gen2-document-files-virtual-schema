@@ -40,12 +40,12 @@ jobs:
           DEPUTY: ${{ secrets.AWS_TAG_DEPUTY }}
       - name: Write ADLSG2 accountkey file
         run: |
-          echo "$ACCOUNTKEY" > accountkey
+          echo "$ACCOUNTKEY" > accountkey.txt
         env:
           ACCOUNTKEY: ${{ secrets.ACCOUNTKEY }}
       - name: Write ADLSG2 accountname file
         run: |
-          echo "$ACCOUNTNAME" > accountname
+          echo "$ACCOUNTNAME" > accountname.txt
         env:
           ACCOUNTNAME: ${{ secrets.ACCOUNTNAME }}
       - name: Run tests and build with Maven
