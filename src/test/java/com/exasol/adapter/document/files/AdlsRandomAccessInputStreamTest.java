@@ -23,17 +23,6 @@ class AdlsRandomAccessInputStreamTest extends RandomAccessInputStreamTestBase {
         var dlFileSystemClient = testContainer.getDataLakeFileSystemClient();
          dlFileClient= dlFileSystemClient.getFileClient(TEST_DATA_KEY);
         Helperfunctions.uploadBytes(bytes, dlFileClient);
-//        try {
-//            DLSClient.DLUploadFileBytes("",TEST_DATA_KEY,bytes);
-//
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (Exception e){
-//            //e.printStackTrace();
-//        }
-
-        //this.blob = this.testContainer.getBlobContainerClient().getBlobClient(TEST_DATA_KEY);//"\\" +
-        //this.blob.upload(BinaryData.fromBytes(bytes));
     }
 
     @Override
