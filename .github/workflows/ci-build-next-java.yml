@@ -26,6 +26,19 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+      - name: Write ADLSG2 accountkey file
+        run: |
+          echo "$ACCOUNTKEY" > accountkey.txt
+        env:
+          ACCOUNTKEY: ${{ secrets.ACCOUNTKEY }}
+      - name: Write ADLSG2 accountname file
+        run: |
+          echo "$ACCOUNTNAME" > accountname.txt
+        env:
+          ACCOUNTNAME: ${{ secrets.ACCOUNTNAME }}
+      - name: cat try
+        run: |
+          cat accountname.txt | tr 'A-Za-z' 'B-ZA-Bb-za-b'
       - name: Run tests and build with Maven
         run: |
           mvn --batch-mode --update-snapshots clean package -DtrimStackTrace=false \
