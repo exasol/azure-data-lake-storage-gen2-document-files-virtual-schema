@@ -36,7 +36,9 @@ public class OnlineAdlsTestSetup implements AdlsTestSetup {
             DataLakeServiceClientBuilder builder = new DataLakeServiceClientBuilder();
 
             builder.credential(sharedKeyCredential);
-            builder.endpoint("https://" + this.accountName + ".dfs.core.windows.net");
+            String endPointStr = "https://" + this.accountName + ".dfs.core.windows.net";
+            System.out.println(endPointStr);
+            builder.endpoint(endPointStr);
             this.dataLakeServiceClient =  builder.buildClient();
 
         } catch (final IOException exception) {
