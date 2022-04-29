@@ -29,8 +29,8 @@ public class OnlineAdlsTestSetup implements AdlsTestSetup {
                     + ACCOUNTNAME_FILE + ".");
         }
         try {
-            this.accountKey = Files.readString(Path.of(ACCOUNTKEY_FILE));
-            this.accountName = Files.readString(Path.of(ACCOUNTNAME_FILE));
+            this.accountKey = Files.readString(Path.of(ACCOUNTKEY_FILE)).replace("\n", "").replace("\r", "");
+            this.accountName = Files.readString(Path.of(ACCOUNTNAME_FILE)).replace("\n", "").replace("\r", "");
             StorageSharedKeyCredential sharedKeyCredential =
                     new StorageSharedKeyCredential(this.accountName, accountKey);
             DataLakeServiceClientBuilder builder = new DataLakeServiceClientBuilder();
