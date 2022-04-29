@@ -32,11 +32,11 @@ public class OnlineAdlsTestSetup implements AdlsTestSetup {
             this.accountKey = Files.readString(Path.of(ACCOUNTKEY_FILE));
             this.accountName = Files.readString(Path.of(ACCOUNTNAME_FILE));
             StorageSharedKeyCredential sharedKeyCredential =
-                    new StorageSharedKeyCredential(accountName, accountKey);
+                    new StorageSharedKeyCredential(this.accountName, accountKey);
             DataLakeServiceClientBuilder builder = new DataLakeServiceClientBuilder();
 
             builder.credential(sharedKeyCredential);
-            builder.endpoint("https://" + accountName + ".dfs.core.windows.net");
+            builder.endpoint("https://" + this.accountName + ".dfs.core.windows.net");
             this.dataLakeServiceClient =  builder.buildClient();
 
         } catch (final IOException exception) {
