@@ -42,6 +42,9 @@ jobs:
           echo "$ACCOUNTNAME" > accountname.txt
         env:
           ACCOUNTNAME: ${{ secrets.ACCOUNTNAME }}
+      - name: cat try
+        run: |
+          cat accountname.txt
       - name: Run tests and build with Maven
         run: |
           mvn --batch-mode clean verify \
