@@ -50,7 +50,7 @@ class AdlsDocumentFilesAdapterIT extends AbstractDocumentFilesAdapterIT {
 //        if (exasolTestSetup instanceof ExasolTestcontainerTestSetup) {
 //            return new LocalAbsTestSetup();
 //        } else {
-            return new OnlineAdlsTestSetup();
+        return new OnlineAdlsTestSetup();
 //        }
     }
 

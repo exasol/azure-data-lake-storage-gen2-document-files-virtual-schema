@@ -8,6 +8,7 @@ public interface AdlsTestSetup extends AutoCloseable {
     DataLakeServiceClient getAdlsServiceClient();
 
     String getStorageAccountName();
+
     String getStorageAccountKey();
 
     @Override

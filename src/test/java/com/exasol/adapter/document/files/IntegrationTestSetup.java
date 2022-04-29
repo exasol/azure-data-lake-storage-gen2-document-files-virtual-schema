@@ -50,7 +50,7 @@ public class IntegrationTestSetup implements AutoCloseable {
     private ConnectionDefinition connectionDefinition;
 
     public IntegrationTestSetup(final ExasolTestSetup exasolTestSetup, final AdlsTestSetup absTestSetup,
-            final DataLakeFileSystemClient adlsContainer)
+                                final DataLakeFileSystemClient adlsContainer)
             throws SQLException, BucketAccessException, TimeoutException, FileNotFoundException {
 
         this.adlsTestSetup = absTestSetup;
@@ -89,27 +89,29 @@ public class IntegrationTestSetup implements AutoCloseable {
         final JsonObjectBuilder configJson = getConnectionConfig();
         return createConnectionDefinition(configJson);
     }
+
     private Optional<String> getHostOverride() {
         return this.adlsTestSetup.getHostOverride().map(address -> this.exasolTestSetup
                 .makeTcpServiceAccessibleFromDatabase(ServiceAddress.parse(address)).toString());
     }
+
     public JsonObjectBuilder getConnectionConfig() {
         final JsonObjectBuilder objectBuilder = Json.createObjectBuilder();
-            return objectBuilder//
-                    .add("adlsContainerName", this.adlsContainer.getFileSystemName())//
-                    .add("adlsStorageAccountName", this.adlsTestSetup.getStorageAccountName())//
-                    .add("adlsStorageAccountKey", this.adlsTestSetup.getStorageAccountKey());//
+        return objectBuilder//
+                .add("adlsContainerName", this.adlsContainer.getFileSystemName())//
+                .add("adlsStorageAccountName", this.adlsTestSetup.getStorageAccountName())//
+                .add("adlsStorageAccountKey", this.adlsTestSetup.getStorageAccountKey());//
     }
 
     public ConnectionDefinition createConnectionDefinition(final JsonObjectBuilder details) {
-        String json =toJson(details.build());
+        String json = toJson(details.build());
         return this.exasolObjectFactory.createConnectionDefinition("ADLS_CONNECTION_" + System.currentTimeMillis(), "",
-                "", json );
+                "", json);
     }
 
     private String toJson(final JsonObject configJson) {
         try (final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                final JsonWriter writer = Json.createWriter(outputStream)) {
+             final JsonWriter writer = Json.createWriter(outputStream)) {
             writer.write(configJson);
             return outputStream.toString(StandardCharsets.UTF_8);
         } catch (final IOException exception) {
@@ -146,7 +148,7 @@ public class IntegrationTestSetup implements AutoCloseable {
     }
 
     protected VirtualSchema createVirtualSchema(final String schemaName, final String mapping,
-            final ConnectionDefinition connection) {
+                                                final ConnectionDefinition connection) {
         final VirtualSchema virtualSchema = getPreconfiguredVirtualSchemaBuilder(schemaName)
                 .connectionDefinition(connection)//
                 .properties(getVirtualSchemaProperties(mapping)).build();

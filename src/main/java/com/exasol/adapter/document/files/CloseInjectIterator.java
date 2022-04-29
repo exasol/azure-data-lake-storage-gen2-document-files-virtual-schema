@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 /**
  * {@link CloseableIterator} that injects an additional close function.
- * 
+ *
  * @param <T> iterator type
  */
 @RequiredArgsConstructor

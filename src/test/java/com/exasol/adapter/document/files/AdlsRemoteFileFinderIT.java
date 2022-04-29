@@ -34,12 +34,12 @@ class AdlsRemoteFileFinderIT {
     static void beforeAll() {
         testContainer = new TestContainer(TEST_SETUP);
         var dlFileSystemClient = testContainer.getDataLakeFileSystemClient();
-        var file1= dlFileSystemClient.getFileClient("file-1.json");
-        Helperfunctions.uploadBytes(CONTENT_1.getBytes(),file1);//.upload(BinaryData.fromBytes(CONTENT_1.getBytes()));
+        var file1 = dlFileSystemClient.getFileClient("file-1.json");
+        Helperfunctions.uploadBytes(CONTENT_1.getBytes(), file1);//.upload(BinaryData.fromBytes(CONTENT_1.getBytes()));
         var file2 = dlFileSystemClient.getFileClient("file-2.json");
-        Helperfunctions.uploadBytes(CONTENT_2.getBytes(),file2);
+        Helperfunctions.uploadBytes(CONTENT_2.getBytes(), file2);
         var file3 = dlFileSystemClient.getFileClient("other.json");
-        Helperfunctions.uploadBytes(CONTENT_OTHER.getBytes(),file3);
+        Helperfunctions.uploadBytes(CONTENT_OTHER.getBytes(), file3);
         connectionInformation = AdlsConnectionProperties.builder() //
                 .adlsContainerName(testContainer.getDataLakeFileSystemClient().getFileSystemName()) //
                 .adlsStorageAccountKey(TEST_SETUP.getStorageAccountKey()) //

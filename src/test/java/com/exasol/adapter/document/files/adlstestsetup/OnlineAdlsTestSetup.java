@@ -37,9 +37,8 @@ public class OnlineAdlsTestSetup implements AdlsTestSetup {
 
             builder.credential(sharedKeyCredential);
             String endPointStr = "https://" + this.accountName + ".dfs.core.windows.net";
-            System.out.println(endPointStr);
             builder.endpoint(endPointStr);
-            this.dataLakeServiceClient =  builder.buildClient();
+            this.dataLakeServiceClient = builder.buildClient();
 
         } catch (final IOException exception) {
             throw new UncheckedIOException("Failed to read abs credentials from file.", exception);
@@ -55,10 +54,12 @@ public class OnlineAdlsTestSetup implements AdlsTestSetup {
     public String getStorageAccountName() {
         return accountName;
     }
+
     @Override
     public String getStorageAccountKey() {
         return accountKey;
     }
+
     @Override
     public void close() {
         // nothing to do

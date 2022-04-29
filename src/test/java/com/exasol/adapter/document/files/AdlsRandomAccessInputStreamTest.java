@@ -21,7 +21,7 @@ class AdlsRandomAccessInputStreamTest extends RandomAccessInputStreamTestBase {
         this.testDataLength = bytes.length;
 
         var dlFileSystemClient = testContainer.getDataLakeFileSystemClient();
-         dlFileClient= dlFileSystemClient.getFileClient(TEST_DATA_KEY);
+        dlFileClient = dlFileSystemClient.getFileClient(TEST_DATA_KEY);
         Helperfunctions.uploadBytes(bytes, dlFileClient);
     }
 

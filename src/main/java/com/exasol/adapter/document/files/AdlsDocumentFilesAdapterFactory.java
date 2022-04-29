@@ -7,13 +7,15 @@ import com.exasol.logging.VersionCollector;
 
 /**
  * Factory for the ABS Virtual Schema adapter.
- * 
+ *
  * <p>
  * This factory is loaded via a service loader (resources/services/com.exasol.adapter.AdapterFactory).
  * </p>
  */
 public class AdlsDocumentFilesAdapterFactory implements AdapterFactory {
-    /** Name of the adapter */
+    /**
+     * Name of the adapter
+     */
     public static final String ADAPTER_NAME = "AZURE_DATA_LAKE_STORAGE_GEN2_DOCUMENT_FILES";
 
     @Override

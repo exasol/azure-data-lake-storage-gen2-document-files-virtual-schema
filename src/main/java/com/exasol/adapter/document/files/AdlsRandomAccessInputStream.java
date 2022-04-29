@@ -21,7 +21,7 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
      * Create a new instance of {@link AdlsRandomAccessInputStream}.
      *
      * @param DataLakeFileClient dlFileClient
-     * @param fileSize file size in bytes
+     * @param fileSize           file size in bytes
      */
     AdlsRandomAccessInputStream(final DataLakeFileClient dlFileClient, final long fileSize) {
         this.dlFileClient = dlFileClient;
@@ -45,12 +45,12 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
     }
 
     @Override
-    public int read(){
+    public int read() {
         LOGGER.info("Performing single read at position.");
         if (this.position < getLength()) {
             final byte[] data;
             DataLakeFileInputStreamOptions sOptions = new DataLakeFileInputStreamOptions();
-            FileRange fr = new FileRange(position,1L);
+            FileRange fr = new FileRange(position, 1L);
             sOptions.setRange(fr);
             var stream = this.dlFileClient.openInputStream(sOptions);
             try {
@@ -75,7 +75,7 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
         int actualReadLength = (int) Math.min(length, remainingBytesInFile);
         if (actualReadLength > 0) {
             DataLakeFileInputStreamOptions sOptions = new DataLakeFileInputStreamOptions();
-            FileRange fr = new FileRange(position,(long)actualReadLength);
+            FileRange fr = new FileRange(position, (long) actualReadLength);
             sOptions.setRange(fr);
             var stream = this.dlFileClient.openInputStream(sOptions);
             try {

@@ -22,9 +22,9 @@ class AdlsRemoteFileContent implements RemoteFileContent {
 
     /**
      * Create a new instance of {@link AdlsRemoteFileContent}.
-     * 
-     * @param dlFileSystemClient     ABS dlFileSystemClient
-     * @param fileToRead file to read
+     *
+     * @param dlFileSystemClient ABS dlFileSystemClient
+     * @param fileToRead         file to read
      */
     public AdlsRemoteFileContent(final DataLakeFileSystemClient dlFileSystemClient, final AdlsObjectDescription fileToRead,
                                  final ExecutorServiceFactory executorServiceFactory) {
@@ -37,10 +37,8 @@ class AdlsRemoteFileContent implements RemoteFileContent {
     public InputStream getInputStream() {
         return getFile().openInputStream().getInputStream();
     }
-    private DataLakeFileClient getFile() {
 
-        //return this.dlFilesystemClient.getBlobClient(this.fileToRead.getName());
-        //TODO: check if it will it work with (nested) directories + filename?
+    private DataLakeFileClient getFile() {
         return this.dlFilesystemClient.getFileClient(this.fileToRead.getName());
     }
 
@@ -49,6 +47,7 @@ class AdlsRemoteFileContent implements RemoteFileContent {
         return new RandomAccessInputStreamCache(new AdlsRandomAccessInputStream(getFile(), this.fileToRead.getSize()),
                 SIZE_1_MB);
     }
+
     @Override
     public Future<byte[]> loadAsync() {
         return this.executorServiceFactory.getExecutorService().submit(() -> {

@@ -9,7 +9,7 @@ public class AdlsConnectionPropertiesReader {
 
     /**
      * Read the {@link AdlsConnectionProperties} from file.
-     * 
+     *
      * @param reader connection properties reader
      * @return read {@link AdlsConnectionProperties}
      */

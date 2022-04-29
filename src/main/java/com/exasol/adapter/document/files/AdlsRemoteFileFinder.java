@@ -22,6 +22,7 @@ import com.exasol.adapter.document.iterators.TransformingIterator;
 public class AdlsRemoteFileFinder implements RemoteFileFinder {
     private final StringFilter filePattern;
     private final DataLakeFileSystemClient dlFileSystemClient;
+
     /**
      * Create a new instance of {@link AdlsRemoteFileFinder}.
      *
@@ -36,11 +37,12 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
         this.dlFileSystemClient = storageAccountBlobServiceClient.getFileSystemClient(connectionProperties.getAdlsContainerName());
         this.filePattern = filePattern;
     }
+
     private DataLakeServiceClient buildAdlsClient(final AdlsConnectionProperties connectionProperties) {
         StorageSharedKeyCredential sharedKeyCredential =
                 new StorageSharedKeyCredential(connectionProperties.getAdlsStorageAccountName(), connectionProperties.getAdlsStorageAccountKey());
 
-        var builder =  new DataLakeServiceClientBuilder();
+        var builder = new DataLakeServiceClientBuilder();
         builder.credential(sharedKeyCredential);
         builder.endpoint("https://" + connectionProperties.getAdlsStorageAccountName() + ".dfs.core.windows.net");
 
@@ -76,21 +78,18 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
      */
 
     private CloseableIterator<AdlsObjectDescription> getQuickFilteredObjectKeys() {
-        final String globFreeKey = this.filePattern.getStaticPrefix();
         ListPathsOptions options = new ListPathsOptions()
                 .setRecursive(true)
                 .setPath(""); // can't filter on this, this has to be an actual path, not a wildcard
 
         final CloseableIterator<PathItem> files = new CloseableIteratorWrapper<>(
-                //TODO: check if it will it work with (nested) directories + filename?
-                //this.dlFileSystemClient.listBlobs(options,null).iterator()
-                this.dlFileSystemClient.listPaths(options,null).iterator()
+                this.dlFileSystemClient.listPaths(options, null).iterator()
         );
         return new TransformingIterator<>(files, file -> new AdlsObjectDescription(file.getName(), file.getContentLength()));
     }
 
     private RemoteFile loadFile(final AdlsObjectDescription fileDescription,
-            final ExecutorServiceFactory executorServiceFactory) {
+                                final ExecutorServiceFactory executorServiceFactory) {
         return new RemoteFile(fileDescription.getName(), fileDescription.getSize(),
                 new AdlsRemoteFileContent(this.dlFileSystemClient, fileDescription, executorServiceFactory));
     }

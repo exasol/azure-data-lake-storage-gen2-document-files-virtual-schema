@@ -31,8 +31,8 @@ class AdlsRemoteFileContentTest {
         testSetup = new OnlineAdlsTestSetup();
         testBucket = new TestContainer(testSetup);
         var dlFilesystemClient = testBucket.getDataLakeFileSystemClient();
-                var dlFileClient = dlFilesystemClient.getFileClient(TEST_DATA_KEY);//.upload(BinaryData.fromBytes( TEST_DATA_VALUE.getBytes()));
-        Helperfunctions.uploadBytes(TEST_DATA_VALUE.getBytes(),dlFileClient);
+        var dlFileClient = dlFilesystemClient.getFileClient(TEST_DATA_KEY);//.upload(BinaryData.fromBytes( TEST_DATA_VALUE.getBytes()));
+        Helperfunctions.uploadBytes(TEST_DATA_VALUE.getBytes(), dlFileClient);
         executorServiceFactory = new ExecutorServiceFactory();
         remoteFileContent = new AdlsRemoteFileContent(testBucket.getDataLakeFileSystemClient(),
                 new AdlsObjectDescription(TEST_DATA_KEY, TEST_DATA_VALUE.length()), executorServiceFactory);

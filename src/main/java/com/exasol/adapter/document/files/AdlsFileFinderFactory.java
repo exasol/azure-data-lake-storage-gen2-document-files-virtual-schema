@@ -13,7 +13,7 @@ public class AdlsFileFinderFactory implements FileFinderFactory {
 
     @Override
     public RemoteFileFinder getFinder(final StringFilter filePattern,
-            final ConnectionPropertiesReader connectionInformation) {
+                                      final ConnectionPropertiesReader connectionInformation) {
         return new AdlsRemoteFileFinder(filePattern, new AdlsConnectionPropertiesReader().read(connectionInformation));
     }
 
