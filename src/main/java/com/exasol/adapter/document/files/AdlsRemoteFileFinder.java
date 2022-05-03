@@ -29,23 +29,21 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
      * @param filePattern          pattern to search for
      * @param connectionProperties connection information
      */
-    //the c'tor sets up a Blob Storage Container client and saves the file pattern for internal operations.
+    //the c'tor sets up a Data Lake Storage Container/File System client and saves the file pattern for internal operations.
     public AdlsRemoteFileFinder(final StringFilter filePattern, final AdlsConnectionProperties connectionProperties) {
         //"storage" in GCP
-        final DataLakeServiceClient storageAccountBlobServiceClient = buildAdlsClient(connectionProperties);
+        final DataLakeServiceClient datalakeServiceClient = buildAdlsClient(connectionProperties);
         //"container" is the equivalent to the "bucket" in GCP
-        this.dlFileSystemClient = storageAccountBlobServiceClient.getFileSystemClient(connectionProperties.getAdlsContainerName());
+        this.dlFileSystemClient = datalakeServiceClient.getFileSystemClient(connectionProperties.getAdlsContainerName());
         this.filePattern = filePattern;
     }
 
     private DataLakeServiceClient buildAdlsClient(final AdlsConnectionProperties connectionProperties) {
         StorageSharedKeyCredential sharedKeyCredential =
                 new StorageSharedKeyCredential(connectionProperties.getAdlsStorageAccountName(), connectionProperties.getAdlsStorageAccountKey());
-
         var builder = new DataLakeServiceClientBuilder();
         builder.credential(sharedKeyCredential);
         builder.endpoint("https://" + connectionProperties.getAdlsStorageAccountName() + ".dfs.core.windows.net");
-
         return builder.buildClient();
     }
 

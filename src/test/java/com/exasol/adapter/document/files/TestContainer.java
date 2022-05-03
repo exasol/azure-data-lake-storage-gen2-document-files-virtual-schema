@@ -12,13 +12,13 @@ public class TestContainer implements AutoCloseable {
     @Getter
     private final DataLakeFileSystemClient dataLakeFileSystemClient;
     @Getter
-    private final String blobContainerName;
+    private final String adlsContainerName;
 
     public TestContainer(final AdlsTestSetup testSetup) {
         final String containerName = "adls-document-vs-test-" + System.currentTimeMillis();
         final DataLakeServiceClient adlsServiceClient = testSetup.getAdlsServiceClient();
         this.dataLakeFileSystemClient = adlsServiceClient.createFileSystem(containerName);
-        this.blobContainerName = containerName;
+        this.adlsContainerName = containerName;
     }
 
     //https://github.com/Azure/azure-sdk-for-java/issues/10180
