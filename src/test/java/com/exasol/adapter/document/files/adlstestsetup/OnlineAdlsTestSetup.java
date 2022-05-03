@@ -41,7 +41,7 @@ public class OnlineAdlsTestSetup implements AdlsTestSetup {
             this.dataLakeServiceClient = builder.buildClient();
 
         } catch (final IOException exception) {
-            throw new UncheckedIOException("Failed to read abs credentials from file.", exception);
+            throw new UncheckedIOException("Failed to read ADLS credentials from file.", exception);
         }
     }
 

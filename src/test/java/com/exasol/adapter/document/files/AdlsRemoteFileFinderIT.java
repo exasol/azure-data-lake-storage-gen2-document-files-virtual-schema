@@ -54,14 +54,14 @@ class AdlsRemoteFileFinderIT {
 
     @Test
     void testReadFile() {
-        final AdlsRemoteFileFinder absFileLoader = new AdlsRemoteFileFinder(
+        final AdlsRemoteFileFinder adlsFileLoader = new AdlsRemoteFileFinder(
                 WildcardExpression.forNonWildcardString("file-1.json"), connectionInformation);
-        assertThat(runAndGetFirstLines(absFileLoader), containsInAnyOrder(CONTENT_1));
+        assertThat(runAndGetFirstLines(adlsFileLoader), containsInAnyOrder(CONTENT_1));
     }
 
-    private List<String> runAndGetFirstLines(final AdlsRemoteFileFinder absFileLoader) {
+    private List<String> runAndGetFirstLines(final AdlsRemoteFileFinder adlsFileLoader) {
         final List<String> result = new ArrayList<>();
-        absFileLoader.loadFiles()
+        adlsFileLoader.loadFiles()
                 .forEachRemaining(file -> result.add(readFirstLine(file.getContent().getInputStream())));
         return result;
     }
@@ -74,15 +74,15 @@ class AdlsRemoteFileFinderIT {
     @ParameterizedTest
     void testReadFilesWithWildcard(final String fileGlob) {
         final WildcardExpression filePattern = WildcardExpression.fromGlob(fileGlob);
-        final AdlsRemoteFileFinder absFileLoader = new AdlsRemoteFileFinder(filePattern, connectionInformation);
-        assertThat(runAndGetFirstLines(absFileLoader), containsInAnyOrder(CONTENT_1, CONTENT_2));
+        final AdlsRemoteFileFinder adlsFileLoader = new AdlsRemoteFileFinder(filePattern, connectionInformation);
+        assertThat(runAndGetFirstLines(adlsFileLoader), containsInAnyOrder(CONTENT_1, CONTENT_2));
     }
 
     @Test
     void testReadAllFiles() {
         final WildcardExpression filePattern = WildcardExpression.fromGlob("*");
-        final AdlsRemoteFileFinder absRemoteFileFinder = new AdlsRemoteFileFinder(filePattern, connectionInformation);
-        assertThat(runAndGetFirstLines(absRemoteFileFinder), containsInAnyOrder(CONTENT_1, CONTENT_2, CONTENT_OTHER));
+        final AdlsRemoteFileFinder adlsRemoteFileFinder = new AdlsRemoteFileFinder(filePattern, connectionInformation);
+        assertThat(runAndGetFirstLines(adlsRemoteFileFinder), containsInAnyOrder(CONTENT_1, CONTENT_2, CONTENT_OTHER));
     }
 
     private String readFirstLine(final InputStream stream) {

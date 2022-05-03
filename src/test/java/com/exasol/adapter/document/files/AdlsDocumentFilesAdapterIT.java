@@ -31,34 +31,29 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class AdlsDocumentFilesAdapterIT extends AbstractDocumentFilesAdapterIT {
     private static IntegrationTestSetup setup;
     private static TestContainer testContainer;
-    private static AdlsTestSetup absTestSetup;
+    private static AdlsTestSetup adlsTestSetup;
 
     @BeforeAll
     static void beforeAll() throws Exception {
         final ExasolTestSetup exasolTestSetup = new ExasolTestSetupFactory(
                 Path.of("cloudSetup/generated/testConfig.json")).getTestSetup();
-        //if this file doesn't exist we just get a local exasol test container setup back
-        //ABS - and this will return a 'local' Azure Data Lake Storage Gen 2, using the azurite emulator.
-        absTestSetup = getAdlsTestSetup(exasolTestSetup);
+
+        adlsTestSetup = getAdlsTestSetup(exasolTestSetup);
         //this will set up a new Azure Data Lake Storage Gen 2 test container for us
-        testContainer = new TestContainer(absTestSetup);
-        setup = new IntegrationTestSetup(exasolTestSetup, absTestSetup, testContainer.getDataLakeFileSystemClient());
+        testContainer = new TestContainer(adlsTestSetup);
+        setup = new IntegrationTestSetup(exasolTestSetup, adlsTestSetup, testContainer.getDataLakeFileSystemClient());
     }
 
     @NotNull
     private static AdlsTestSetup getAdlsTestSetup(final ExasolTestSetup exasolTestSetup) {
-//        if (exasolTestSetup instanceof ExasolTestcontainerTestSetup) {
-//            return new LocalAbsTestSetup();
-//        } else {
         return new OnlineAdlsTestSetup();
-//        }
     }
 
     @AfterAll
     static void afterAll() throws Exception {
         testContainer.close();
         setup.close();
-        absTestSetup.close();
+        adlsTestSetup.close();
     }
 
     @AfterEach

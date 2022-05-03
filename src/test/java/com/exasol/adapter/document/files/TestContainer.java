@@ -15,7 +15,7 @@ public class TestContainer implements AutoCloseable {
     private final String blobContainerName;
 
     public TestContainer(final AdlsTestSetup testSetup) {
-        final String containerName = "abs-document-vs-test-" + System.currentTimeMillis();
+        final String containerName = "adls-document-vs-test-" + System.currentTimeMillis();
         final DataLakeServiceClient adlsServiceClient = testSetup.getAdlsServiceClient();
         this.dataLakeFileSystemClient = adlsServiceClient.createFileSystem(containerName);
         this.blobContainerName = containerName;

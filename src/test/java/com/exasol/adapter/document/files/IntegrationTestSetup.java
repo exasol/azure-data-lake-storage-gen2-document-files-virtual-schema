@@ -49,11 +49,11 @@ public class IntegrationTestSetup implements AutoCloseable {
     @Setter
     private ConnectionDefinition connectionDefinition;
 
-    public IntegrationTestSetup(final ExasolTestSetup exasolTestSetup, final AdlsTestSetup absTestSetup,
+    public IntegrationTestSetup(final ExasolTestSetup exasolTestSetup, final AdlsTestSetup adlsTestSetup,
                                 final DataLakeFileSystemClient adlsContainer)
             throws SQLException, BucketAccessException, TimeoutException, FileNotFoundException {
 
-        this.adlsTestSetup = absTestSetup;
+        this.adlsTestSetup = adlsTestSetup;
         this.adlsContainer = adlsContainer;
 
         this.exasolTestSetup = exasolTestSetup;

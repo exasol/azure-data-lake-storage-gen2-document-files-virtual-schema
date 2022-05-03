@@ -3,7 +3,7 @@ package com.exasol.adapter.document.files;
 import lombok.Data;
 
 /**
- * This class represents a reference to a ABS object.
+ * This class represents a reference to a ADLS object.
  */
 @Data
 class AdlsObjectDescription {

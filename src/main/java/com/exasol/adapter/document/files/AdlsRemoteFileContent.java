@@ -23,7 +23,7 @@ class AdlsRemoteFileContent implements RemoteFileContent {
     /**
      * Create a new instance of {@link AdlsRemoteFileContent}.
      *
-     * @param dlFileSystemClient ABS dlFileSystemClient
+     * @param dlFileSystemClient ADLS dlFileSystemClient
      * @param fileToRead         file to read
      */
     public AdlsRemoteFileContent(final DataLakeFileSystemClient dlFileSystemClient, final AdlsObjectDescription fileToRead,

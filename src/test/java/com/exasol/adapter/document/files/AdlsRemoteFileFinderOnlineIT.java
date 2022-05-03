@@ -47,14 +47,14 @@ class AdlsRemoteFileFinderOnlineIT {
 
     @Test
     void testReadFile() {
-        final AdlsRemoteFileFinder absFileLoader = new AdlsRemoteFileFinder(
+        final AdlsRemoteFileFinder adlsFileLoader = new AdlsRemoteFileFinder(
                 WildcardExpression.forNonWildcardString("file-1.json"), connectionInformation);
-        assertThat(runAndGetFirstLines(absFileLoader), containsInAnyOrder(CONTENT_1));
+        assertThat(runAndGetFirstLines(adlsFileLoader), containsInAnyOrder(CONTENT_1));
     }
 
-    private List<String> runAndGetFirstLines(final AdlsRemoteFileFinder absFileLoader) {
+    private List<String> runAndGetFirstLines(final AdlsRemoteFileFinder adlsFileLoader) {
         final List<String> result = new ArrayList<>();
-        absFileLoader.loadFiles()
+        adlsFileLoader.loadFiles()
                 .forEachRemaining(file -> result.add(readFirstLine(file.getContent().getInputStream())));
         return result;
     }

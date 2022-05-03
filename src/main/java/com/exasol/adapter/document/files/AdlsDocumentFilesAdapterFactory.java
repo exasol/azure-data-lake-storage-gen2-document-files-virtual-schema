@@ -6,7 +6,7 @@ import com.exasol.adapter.document.DocumentAdapter;
 import com.exasol.logging.VersionCollector;
 
 /**
- * Factory for the ABS Virtual Schema adapter.
+ * Factory for the ADLS Virtual Schema adapter.
  *
  * <p>
  * This factory is loaded via a service loader (resources/services/com.exasol.adapter.AdapterFactory).
