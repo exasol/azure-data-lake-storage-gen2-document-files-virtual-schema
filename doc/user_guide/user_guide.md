@@ -36,7 +36,7 @@ CREATE OR REPLACE JAVA SET SCRIPT ADAPTER.IMPORT_FROM_AZURE_DATA_LAKE_STORAGE_GE
 
 ## Creating a Connection
 
-For granting the Virtual Schema access to your Azure Data Lake Storage Gen 2 container you need a connection string of your Azure Storage Account containing your container and the container name.
+For granting the Virtual Schema access to your Azure Data Lake Storage Gen 2 container you need the account name of your Azure Datalake-enabled Storage Account, a storage account key and the container name.
  
 You can find your storage account's connection strings in the Azure portal. Navigate to `SETTINGS` > `Access keys` in your storage account's menu blade to see connection strings for both primary and secondary access keys. (More info [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#:~:text=You%20can%20find%20your%20storage,primary%20and%20secondary%20access%20keys.))
 
@@ -49,11 +49,9 @@ CREATE CONNECTION ADLS_CONNECTION
     IDENTIFIED BY '{
         "adlsStorageAccountName":"myadslenabledstorageaccount",
         "adlsStorageAccountKey":"<key>",  
-        "adlsContainerName":"<ABS CONTAINER NAME>" 
+        "adlsContainerName":"<ADLS CONTAINER NAME>" 
     }';
 ```
-
-Here you can use the connection string as value for `absStorageAccountConnectionString`.
 
 The connection stores all connection details as JSON in the `IDENTIFIED BY` part. There you can use the following keys:
 
