@@ -14,9 +14,9 @@
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aazure-data-lake-storage-gen2-document-files-virtual-schema&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=com.exasol%3Aazure-data-lake-storage-gen2-document-files-virtual-schema)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aazure-data-lake-storage-gen2-document-files-virtual-schema&metric=ncloc)](https://sonarcloud.io/dashboard?id=com.exasol%3Aazure-data-lake-storage-gen2-document-files-virtual-schema)
 
-This Virtual Schema allows you to access document files stored in Azure Data Lake Storage Gen 2 like a regular Exasol table. For different file systems sources check the [Files Virtual Schemas][files-vs]
+This Virtual Schema allows you to access document files stored in Azure Data Lake Storage Gen 2 like a regular Exasol table. For different file systems sources check the [Files Virtual Schemas][files-vs].
 
-For supported document file formats, see [Files Virtual Schema][files-vs]
+For supported document file formats, see [Files Virtual Schema][files-vs].
 
 ## Information for Users
 

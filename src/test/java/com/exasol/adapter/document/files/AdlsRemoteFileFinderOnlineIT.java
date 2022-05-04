@@ -62,7 +62,7 @@ class AdlsRemoteFileFinderOnlineIT {
         try (final BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
             return reader.readLine();
         } catch (final IOException exception) {
-            throw new IllegalArgumentException("", exception);
+            throw new UncheckedIOException("Error reading first line", exception);
         }
     }
 }
