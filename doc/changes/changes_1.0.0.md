@@ -18,7 +18,7 @@ Code name:
 * Added `com.exasol:virtual-schema-common-document-files:6.0.1`
 * Added `com.fasterxml.jackson.core:jackson-annotations:2.13.2`
 * Added `com.fasterxml.jackson.core:jackson-core:2.13.2`
-* Added `com.fasterxml.jackson.core:jackson-databind:2.13.2`
+* Added `com.fasterxml.jackson.core:jackson-databind:2.13.2.2`
 * Added `com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.2`
 * Added `com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2`
 
