@@ -21,6 +21,9 @@ Code name:
 * Added `com.fasterxml.jackson.core:jackson-databind:2.13.2`
 * Added `com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.2`
 * Added `com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2`
+
+### Runtime Dependency Updates
+
 * Added `org.slf4j:slf4j-api:1.7.21`
 * Added `org.slf4j:slf4j-simple:1.7.21`
 
