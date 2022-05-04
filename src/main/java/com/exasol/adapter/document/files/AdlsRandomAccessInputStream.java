@@ -53,8 +53,8 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
             FileRange fr = new FileRange(position, 1L);
             sOptions.setRange(fr);
             var stream = this.dlFileClient.openInputStream(sOptions);
-            try {
-                data = stream.getInputStream().readNBytes(1);
+            try (var inputStream = stream.getInputStream()){
+                data = inputStream.readNBytes(1);
             } catch (final IOException exception) {
                 throw getReadFailedException(exception);
             }
@@ -78,8 +78,8 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
             FileRange fr = new FileRange(position, (long) actualReadLength);
             sOptions.setRange(fr);
             var stream = this.dlFileClient.openInputStream(sOptions);
-            try {
-                actualReadLength = stream.getInputStream().read(targetBuffer);
+            try (var inputStream = stream.getInputStream()){
+                actualReadLength = inputStream.read(targetBuffer);
             } catch (final IOException exception) {
                 throw getReadFailedException(exception);
             }
