@@ -8,7 +8,7 @@ import com.exasol.adapter.document.connection.ConnectionPropertiesReader;
 public class AdlsConnectionPropertiesReader {
 
     /**
-     * Read the {@link AdlsConnectionProperties} from file.
+     * Read the {@link AdlsConnectionProperties} from the given reader.
      *
      * @param reader connection properties reader
      * @return read {@link AdlsConnectionProperties}

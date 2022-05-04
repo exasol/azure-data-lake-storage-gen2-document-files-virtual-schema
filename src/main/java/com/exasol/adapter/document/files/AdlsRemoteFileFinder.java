@@ -74,7 +74,6 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
      *
      * @return partially filtered list of object keys
      */
-
     private CloseableIterator<AdlsObjectDescription> getQuickFilteredObjectKeys() {
         ListPathsOptions options = new ListPathsOptions()
                 .setRecursive(true)

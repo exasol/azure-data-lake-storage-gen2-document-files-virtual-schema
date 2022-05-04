@@ -15,7 +15,7 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
     private static final Logger LOGGER = Logger.getLogger(AdlsRandomAccessInputStream.class.getName());
     private final long fileSize;
     private final DataLakeFileClient dlFileClient;
-    long position = 0;
+    private long position = 0;
 
     /**
      * Create a new instance of {@link AdlsRandomAccessInputStream}.
@@ -30,7 +30,7 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
 
     @Override
     public void seek(final long position) {
-        LOGGER.log(Level.INFO, "Seek to position {0}", position);
+        LOGGER.log(Level.FINEST, "Seek to position {0}", position);
         this.position = position;
     }
 
@@ -46,7 +46,7 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
 
     @Override
     public int read() {
-        LOGGER.info("Performing single read at position.");
+        LOGGER.finest("Performing single read at position.");
         if (this.position < getLength()) {
             final byte[] data;
             DataLakeFileInputStreamOptions sOptions = new DataLakeFileInputStreamOptions();

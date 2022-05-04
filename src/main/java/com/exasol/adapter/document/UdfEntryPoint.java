@@ -23,8 +23,7 @@ public class UdfEntryPoint {
      * @throws Exception if data can't get be loaded
      */
     @SuppressWarnings({"java:S112", "java:S1130"}) // Exception is too generic and not thrown. This signature is
-    // however given by the
-    // UDF framework
+    // however given by the UDF framework
     public static void run(final ExaMetadata exaMetadata, final ExaIterator exaIterator) throws Exception {
         new GenericUdfCallHandler(AdlsVsConstants.USER_GUIDE_URL).run(exaMetadata, exaIterator);
     }

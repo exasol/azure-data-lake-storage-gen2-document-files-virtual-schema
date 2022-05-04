@@ -31,7 +31,6 @@ class AdlsRemoteFileFinderOnlineIT {
         testContainer = new TestContainer(TEST_SETUP);
         var dlFileSystemClient = testContainer.getDataLakeFileSystemClient();
         var file1 = dlFileSystemClient.getFileClient("file-1.json");
-        //file1.upload(BinaryData.fromBytes(CONTENT_1.getBytes()));
         Helperfunctions.uploadBytes(CONTENT_1.getBytes(), file1);
         connectionInformation = AdlsConnectionProperties.builder() //
                 .adlsContainerName(testContainer.getDataLakeFileSystemClient().getFileSystemName()) //

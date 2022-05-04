@@ -90,7 +90,7 @@ The `CREATE VIRTUAL SCHEMA` command accepts the following properties:
 
 | Property            | Mandatory | Default | Description                                                                    |
 |---------------------|-----------|---------|--------------------------------------------------------------------------------|
-| `MAPPING`           | Yes       |         | Path to the mapping definition file(s)                                         |
+| `MAPPING`           | Yes       |         | Path to the mapping definition file(s) in BucketFS                             |
 | `MAX_PARALLEL_UDFS` | No        | -1      | Maximum number of UDFs that are executed in parallel. -1 represents unlimited. | 
 
 Now browse the data using your favorite SQL client.

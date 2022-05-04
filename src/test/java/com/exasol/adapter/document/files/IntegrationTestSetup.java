@@ -100,7 +100,7 @@ public class IntegrationTestSetup implements AutoCloseable {
         return objectBuilder//
                 .add("adlsContainerName", this.adlsContainer.getFileSystemName())//
                 .add("adlsStorageAccountName", this.adlsTestSetup.getStorageAccountName())//
-                .add("adlsStorageAccountKey", this.adlsTestSetup.getStorageAccountKey());//
+                .add("adlsStorageAccountKey", this.adlsTestSetup.getStorageAccountKey());
     }
 
     public ConnectionDefinition createConnectionDefinition(final JsonObjectBuilder details) {
@@ -129,14 +129,10 @@ public class IntegrationTestSetup implements AutoCloseable {
 
     @Override
     public void close() throws Exception {
-        try {
-            this.udfTestSetup.close();
-            this.exasolStatement.close();
-            this.exasolConnection.close();
-            this.exasolTestSetup.close();
-        } catch (final SQLException exception) {
-            // at least we tried to close it
-        }
+        this.udfTestSetup.close();
+        this.exasolStatement.close();
+        this.exasolConnection.close();
+        this.exasolTestSetup.close();
     }
 
     public Statement getExasolStatement() {

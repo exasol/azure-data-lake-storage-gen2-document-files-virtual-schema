@@ -53,8 +53,7 @@ class AdlsRemoteFileContent implements RemoteFileContent {
         return this.executorServiceFactory.getExecutorService().submit(() -> {
             ByteArrayOutputStream oStream = new ByteArrayOutputStream();
             getFile().read(oStream);
-            var byteArray = oStream.toByteArray();
-            return byteArray;
+            return oStream.toByteArray();
         });
     }
 }

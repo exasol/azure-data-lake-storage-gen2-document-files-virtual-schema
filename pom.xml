@@ -9,12 +9,8 @@
     <description>Adapter for document data access from files from Azure Data Lake Storage Gen 2.</description>
     <url>https://github.com/exasol/azure-data-lake-storage-gen2-document-files-virtual-schema</url>
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
         <junit.version>5.8.2</junit.version>
         <jacoco.version>0.8.7</jacoco.version>
-        <gpg.skip>true</gpg.skip>
         <org.testcontainers.version>1.16.2</org.testcontainers.version>
         <vs-common-document-files.version>6.0.1</vs-common-document-files.version>
         <!--

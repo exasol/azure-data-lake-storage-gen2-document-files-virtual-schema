@@ -9,7 +9,7 @@ import com.exasol.adapter.document.files.adlstestsetup.OnlineAdlsTestSetup;
 
 class AdlsRandomAccessInputStreamTest extends RandomAccessInputStreamTestBase {
     private static final String TEST_DATA_KEY = "TEST_DATA";
-    long testDataLength;
+    private long testDataLength;
     private AdlsTestSetup testSetup;
     private TestContainer testContainer;
     private DataLakeFileClient dlFileClient;
