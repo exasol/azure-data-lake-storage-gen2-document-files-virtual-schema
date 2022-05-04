@@ -1,5 +1,6 @@
 package com.exasol.adapter.document.files;
 
+import java.io.*;
 import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
 import com.exasol.adapter.document.files.adlstestsetup.OnlineAdlsTestSetup;
 import com.exasol.adapter.document.files.connection.AdlsConnectionProperties;
