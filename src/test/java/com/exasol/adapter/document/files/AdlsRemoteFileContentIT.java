@@ -18,7 +18,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class AdlsRemoteFileContentTest {
+class AdlsRemoteFileContentIT {
     private static final String TEST_DATA_VALUE = "test content";
     private static final String TEST_DATA_KEY = "TEST_DATA";
     private static AdlsTestSetup testSetup;

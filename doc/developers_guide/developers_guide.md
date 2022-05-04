@@ -2,6 +2,10 @@
 
 This guide contains information for developers.
 
+## Credentials
+Since we don't have an emulator most tests are run on an actual datalake storage account.
+You got to provide an accountkey.txt and accountname.txt file with the corresponding values for the datalake storage account (key and accountname) if you want to run the tests locally.
+
 ## Running Regression Test
 
 This project contains some regression tests to monitor the performance cross releases. To run them locally use:

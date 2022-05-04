@@ -25,6 +25,7 @@ class AdlsRemoteFileContent implements RemoteFileContent {
      *
      * @param dlFileSystemClient ADLS dlFileSystemClient
      * @param fileToRead         file to read
+     * @param executorServiceFactory ExecutorServiceFactory
      */
     public AdlsRemoteFileContent(final DataLakeFileSystemClient dlFileSystemClient, final AdlsObjectDescription fileToRead,
                                  final ExecutorServiceFactory executorServiceFactory) {
