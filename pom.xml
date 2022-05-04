@@ -18,7 +18,7 @@
             M5 fails in integration tests with a strange error
             -->
         <surefire.and.failsafe.plugin.version>3.0.0-M3</surefire.and.failsafe.plugin.version>
-        <jackson.version>2.13.2</jackson.version>
+        <jackson.version>2.13.2.1</jackson.version>
     </properties>
     <licenses>
         <license>
