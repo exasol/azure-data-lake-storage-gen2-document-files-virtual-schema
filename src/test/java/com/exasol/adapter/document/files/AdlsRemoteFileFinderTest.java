@@ -4,6 +4,8 @@ import com.exasol.adapter.document.files.connection.AdlsConnectionProperties;
 import com.exasol.adapter.document.files.stringfilter.wildcardexpression.WildcardExpression;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AdlsRemoteFileFinderTest {
@@ -16,6 +18,8 @@ class AdlsRemoteFileFinderTest {
         final WildcardExpression filter = WildcardExpression.fromGlob("*");
         final IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new AdlsRemoteFileFinder(filter, connectionInformation));
+        assertThat(exception.getMessage(),
+                containsString("Illegal character in authority"));
 
     }
 }
