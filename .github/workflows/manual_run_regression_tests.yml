@@ -55,7 +55,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "eu-central-1"
-      - name: Publish Test Report for ${{ matrix.docker_db_version }}
+      - name: Publish Test Report
         uses: scacap/action-surefire-report@v1
         if: ${{ always() }}
         with:
