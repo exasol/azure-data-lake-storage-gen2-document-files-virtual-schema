@@ -67,7 +67,7 @@ class AdlsRandomAccessInputStream extends RandomAccessInputStream {
 
     @Override
     public int read(final byte[] targetBuffer, final int offset, final int length) {
-        LOGGER.log(Level.INFO, "read - length: {0} - offset: {1}", new Object[]{length, offset});
+        LOGGER.log(Level.FINEST, "read - length: {0} - offset: {1}", new Object[]{length, offset});
         if (length == 0) {
             return 0;
         }
