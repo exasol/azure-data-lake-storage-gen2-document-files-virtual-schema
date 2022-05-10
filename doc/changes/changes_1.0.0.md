@@ -1,6 +1,6 @@
-# Virtual Schema for document data in files on Azure Data Lake Storage Gen 2 1.0.0, released 2022-??-??
+# Virtual Schema for document data in files on Azure Data Lake Storage Gen 2 1.0.0, released 2022-05-10
 
-Code name:
+Code name: First version
 
 ## Features
 
