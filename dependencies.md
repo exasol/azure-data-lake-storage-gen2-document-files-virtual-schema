@@ -109,10 +109,10 @@
 [0]: https://github.com/FasterXML/jackson-core
 [76]: https://maven.apache.org/plugins/maven-jar-plugin/
 [38]: https://github.com/exasol/test-db-builder-java/
+[8]: https://github.com/FasterXML/jackson-modules-java8/tree/2.14/datetime
 [84]: https://maven.apache.org/surefire/maven-failsafe-plugin/
 [48]: https://github.com/exasol/performance-test-recorder-java
 [15]: http://opensource.org/licenses/MIT
-[8]: https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310
 [73]: https://github.com/exasol/project-keeper/blob/main/LICENSE
 [80]: https://maven.apache.org/plugins/maven-dependency-plugin/
 [59]: https://www.apache.org/licenses/LICENSE-2.0.txt
