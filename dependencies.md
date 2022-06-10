@@ -10,8 +10,8 @@
 | [jackson-databind][2]                                           | [The Apache Software License, Version 2.0][1] |
 | [Jackson-dataformat-XML][6]                                     | [The Apache Software License, Version 2.0][1] |
 | [Jackson datatype: JSR310][8]                                   | [The Apache Software License, Version 2.0][1] |
-| [Virtual Schema for document data in files][10]                 | [MIT][11]                                     |
-| [error-reporting-java][12]                                      | [MIT][11]                                     |
+| [Virtual Schema for document data in files][10]                 | [MIT License][11]                             |
+| [error-reporting-java][12]                                      | [MIT][13]                                     |
 | [Microsoft Azure client library for Blob Storage][14]           | [The MIT License (MIT)][15]                   |
 | [Microsoft Azure client library for File Storage Data Lake][14] | [The MIT License (MIT)][15]                   |
 | [Microsoft Azure client library for Identity][14]               | [The MIT License (MIT)][15]                   |
@@ -23,103 +23,107 @@
 | Dependency                                      | License                           |
 | ----------------------------------------------- | --------------------------------- |
 | [Hamcrest][24]                                  | [BSD License 3][25]               |
-| [Virtual Schema for document data in files][10] | [MIT][11]                         |
+| [Virtual Schema for document data in files][10] | [MIT License][11]                 |
 | [JUnit Jupiter Engine][28]                      | [Eclipse Public License v2.0][29] |
 | [JUnit Jupiter Params][28]                      | [Eclipse Public License v2.0][29] |
 | [mockito-core][32]                              | [The MIT License][33]             |
-| [JUnit][34]                                     | [Eclipse Public License 1.0][35]  |
-| [Testcontainers :: JUnit Jupiter Extension][36] | [MIT][15]                         |
-| [Testcontainers :: Localstack][36]              | [MIT][15]                         |
-| [Test Database Builder for Java][40]            | [MIT License][41]                 |
-| [JaCoCo :: Core][42]                            | [Eclipse Public License 2.0][43]  |
-| [udf-debugging-java][44]                        | [MIT][11]                         |
-| [Matcher for SQL Result Sets][46]               | [MIT][11]                         |
-| [exasol-test-setup-abstraction-java][48]        | [MIT][11]                         |
-| [SnakeYAML][50]                                 | [Apache License, Version 2.0][1]  |
-| [JaCoCo :: Agent][42]                           | [Eclipse Public License 2.0][43]  |
+| [Testcontainers :: JUnit Jupiter Extension][34] | [MIT][15]                         |
+| [Testcontainers :: Localstack][34]              | [MIT][15]                         |
+| [Test Database Builder for Java][38]            | [MIT License][39]                 |
+| [udf-debugging-java][40]                        | [MIT][13]                         |
+| [Matcher for SQL Result Sets][42]               | [MIT][13]                         |
+| [exasol-test-setup-abstraction-java][44]        | [MIT License][45]                 |
+| [SnakeYAML][46]                                 | [Apache License, Version 2.0][1]  |
+| [Performance Test Recorder Java][48]            | [MIT][13]                         |
+| [JaCoCo :: Agent][50]                           | [Eclipse Public License 2.0][51]  |
 
 ## Runtime Dependencies
 
 | Dependency                 | License           |
 | -------------------------- | ----------------- |
-| [SLF4J API Module][54]     | [MIT License][55] |
-| [SLF4J Simple Binding][54] | [MIT License][55] |
+| [SLF4J API Module][52]     | [MIT License][53] |
+| [SLF4J Simple Binding][52] | [MIT License][53] |
 
 ## Plugin Dependencies
 
 | Dependency                                              | License                                       |
 | ------------------------------------------------------- | --------------------------------------------- |
-| [Apache Maven Enforcer Plugin][58]                      | [Apache License, Version 2.0][59]             |
-| [Maven Flatten Plugin][60]                              | [Apache Software Licenese][1]                 |
-| [Apache Maven Compiler Plugin][62]                      | [Apache License, Version 2.0][59]             |
+| [SonarQube Scanner for Maven][56]                       | [GNU LGPL 3][57]                              |
+| [Apache Maven Compiler Plugin][58]                      | [Apache License, Version 2.0][59]             |
+| [Apache Maven Enforcer Plugin][60]                      | [Apache License, Version 2.0][59]             |
+| [Maven Flatten Plugin][62]                              | [Apache Software Licenese][1]                 |
 | [org.sonatype.ossindex.maven:ossindex-maven-plugin][64] | [ASL2][1]                                     |
 | [Reproducible Build Maven Plugin][66]                   | [Apache 2.0][1]                               |
 | [Maven Surefire Plugin][68]                             | [Apache License, Version 2.0][59]             |
 | [Versions Maven Plugin][70]                             | [Apache License, Version 2.0][59]             |
-| [Project keeper maven plugin][72]                       | [MIT][11]                                     |
+| [Project keeper maven plugin][72]                       | [The MIT License][73]                         |
 | [Apache Maven Assembly Plugin][74]                      | [Apache License, Version 2.0][59]             |
 | [Apache Maven JAR Plugin][76]                           | [Apache License, Version 2.0][59]             |
-| [Artifact reference checker and unifier][78]            | [MIT][11]                                     |
+| [Artifact reference checker and unifier][78]            | [MIT][13]                                     |
 | [Apache Maven Dependency Plugin][80]                    | [Apache License, Version 2.0][59]             |
-| [Lombok Maven Plugin][82]                               | [The MIT License][11]                         |
+| [Lombok Maven Plugin][82]                               | [The MIT License][13]                         |
 | [Maven Failsafe Plugin][84]                             | [Apache License, Version 2.0][59]             |
-| [JaCoCo :: Maven Plugin][86]                            | [Eclipse Public License 2.0][43]              |
-| [error-code-crawler-maven-plugin][88]                   | [MIT][11]                                     |
+| [JaCoCo :: Maven Plugin][86]                            | [Eclipse Public License 2.0][51]              |
+| [error-code-crawler-maven-plugin][88]                   | [MIT][13]                                     |
 | [Maven Clean Plugin][90]                                | [The Apache Software License, Version 2.0][1] |
 | [Maven Resources Plugin][92]                            | [The Apache Software License, Version 2.0][1] |
 | [Maven Install Plugin][94]                              | [The Apache Software License, Version 2.0][1] |
 | [Maven Deploy Plugin][96]                               | [The Apache Software License, Version 2.0][1] |
 | [Maven Site Plugin 3][98]                               | [The Apache Software License, Version 2.0][1] |
 
-[42]: https://www.eclemma.org/jacoco/index.html
+[50]: https://www.eclemma.org/jacoco/index.html
 [12]: https://github.com/exasol/error-reporting-java
-[10]: https://github.com/exasol/virtual-schema-common-document-files
 [1]: http://www.apache.org/licenses/LICENSE-2.0.txt
 [22]: https://projectlombok.org
 [68]: https://maven.apache.org/surefire/maven-surefire-plugin/
 [90]: http://maven.apache.org/plugins/maven-clean-plugin/
-[11]: https://opensource.org/licenses/MIT
+[13]: https://opensource.org/licenses/MIT
 [32]: https://github.com/mockito/mockito
+[62]: https://www.mojohaus.org/flatten-maven-plugin/
 [6]: https://github.com/FasterXML/jackson-dataformat-xml
 [70]: http://www.mojohaus.org/versions-maven-plugin/
+[72]: https://github.com/exasol/project-keeper/
 [25]: http://opensource.org/licenses/BSD-3-Clause
-[62]: https://maven.apache.org/plugins/maven-compiler-plugin/
-[41]: https://github.com/exasol/test-db-builder-java/blob/main/LICENSE
-[34]: http://junit.org
-[43]: https://www.eclipse.org/legal/epl-2.0/
+[58]: https://maven.apache.org/plugins/maven-compiler-plugin/
+[39]: https://github.com/exasol/test-db-builder-java/blob/main/LICENSE
+[44]: https://github.com/exasol/exasol-test-setup-abstraction-java/
+[51]: https://www.eclipse.org/legal/epl-2.0/
 [2]: http://github.com/FasterXML/jackson
+[57]: http://www.gnu.org/licenses/lgpl.txt
 [86]: https://www.jacoco.org/jacoco/trunk/doc/maven.html
 [33]: https://github.com/mockito/mockito/blob/main/LICENSE
 [23]: https://projectlombok.org/LICENSE
-[46]: https://github.com/exasol/hamcrest-resultset-matcher
+[42]: https://github.com/exasol/hamcrest-resultset-matcher
 [66]: http://zlika.github.io/reproducible-build-maven-plugin
-[55]: http://www.opensource.org/licenses/mit-license.php
-[72]: https://github.com/exasol/project-keeper-maven-plugin/project-keeper-maven-plugin-generated-parent/project-keeper-maven-plugin
+[45]: https://github.com/exasol/exasol-test-setup-abstraction-java/blob/main/LICENSE
+[53]: http://www.opensource.org/licenses/mit-license.php
+[56]: http://sonarsource.github.io/sonar-scanner-maven/
+[40]: https://github.com/exasol/udf-debugging-java/
 [28]: https://junit.org/junit5/
-[60]: https://www.mojohaus.org/flatten-maven-plugin/flatten-maven-plugin
+[46]: https://bitbucket.org/snakeyaml/snakeyaml
+[10]: https://github.com/exasol/virtual-schema-common-document-files/
 [24]: http://hamcrest.org/JavaHamcrest/
-[54]: http://www.slf4j.org
+[52]: http://www.slf4j.org
 [92]: http://maven.apache.org/plugins/maven-resources-plugin/
 [78]: https://github.com/exasol/artifact-reference-checker-maven-plugin
-[48]: https://github.com/exasol/exasol-test-setup-abstraction-java
 [0]: https://github.com/FasterXML/jackson-core
 [76]: https://maven.apache.org/plugins/maven-jar-plugin/
-[50]: http://www.snakeyaml.org
-[40]: https://github.com/exasol/test-db-builder-java/
+[38]: https://github.com/exasol/test-db-builder-java/
 [84]: https://maven.apache.org/surefire/maven-failsafe-plugin/
+[48]: https://github.com/exasol/performance-test-recorder-java
 [15]: http://opensource.org/licenses/MIT
 [8]: https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310
-[35]: http://www.eclipse.org/legal/epl-v10.html
+[73]: https://github.com/exasol/project-keeper/blob/main/LICENSE
 [80]: https://maven.apache.org/plugins/maven-dependency-plugin/
 [59]: https://www.apache.org/licenses/LICENSE-2.0.txt
-[58]: https://maven.apache.org/enforcer/maven-enforcer-plugin/
-[82]: https://awhitford.github.com/lombok.maven/lombok-maven-plugin/
+[60]: https://maven.apache.org/enforcer/maven-enforcer-plugin/
 [14]: https://github.com/Azure/azure-sdk-for-java
 [29]: https://www.eclipse.org/legal/epl-v20.html
 [94]: http://maven.apache.org/plugins/maven-install-plugin/
 [64]: https://sonatype.github.io/ossindex-maven/maven-plugin/
-[36]: https://testcontainers.org
-[44]: https://github.com/exasol/udf-debugging-java
+[11]: https://github.com/exasol/virtual-schema-common-document-files/blob/main/LICENSE
+[34]: https://testcontainers.org
+[82]: https://anthonywhitford.com/lombok.maven/lombok-maven-plugin/
 [96]: http://maven.apache.org/plugins/maven-deploy-plugin/
 [98]: http://maven.apache.org/plugins/maven-site-plugin/
 [88]: https://github.com/exasol/error-code-crawler-maven-plugin
