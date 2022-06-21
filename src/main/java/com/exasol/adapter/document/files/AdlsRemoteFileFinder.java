@@ -10,10 +10,7 @@ import com.exasol.adapter.document.documentfetcher.files.RemoteFile;
 import com.exasol.adapter.document.documentfetcher.files.RemoteFileFinder;
 import com.exasol.adapter.document.files.connection.AdlsConnectionProperties;
 import com.exasol.adapter.document.files.stringfilter.StringFilter;
-import com.exasol.adapter.document.iterators.CloseableIterator;
-import com.exasol.adapter.document.iterators.CloseableIteratorWrapper;
-import com.exasol.adapter.document.iterators.FilteringIterator;
-import com.exasol.adapter.document.iterators.TransformingIterator;
+import com.exasol.adapter.document.iterators.*;
 
 
 /**

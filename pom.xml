@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exasol</groupId>
     <artifactId>azure-data-lake-storage-gen2-document-files-virtual-schema</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>Virtual Schema for document data in files on Azure Data Lake Storage Gen 2</name>
     <description>Adapter for document data access from files from Azure Data Lake Storage Gen 2.</description>
     <url>https://github.com/exasol/azure-data-lake-storage-gen2-document-files-virtual-schema/</url>
@@ -203,7 +203,7 @@
                         <!-- io.netty:netty-handler: https://ossindex.sonatype.org/vulnerability/sonatype-2020-0026
                         Not a vulnerability in netty but how it is configured by the client com.azure:azure-core-http-netty. -->
                         <exclude>sonatype-2020-0026</exclude>
-                         <!-- io.netty:netty-common: https://ossindex.sonatype.org/vulnerability/CVE-2022-24823
+                        <!-- io.netty:netty-common: https://ossindex.sonatype.org/vulnerability/CVE-2022-24823
                         Excluded because we assume that the attacker does not have local access to the machine.
                         Can be removed once com.azure:azure-core-http-netty upgrades to a newer netty version. -->
                         <exclude>CVE-2022-24823</exclude>
@@ -241,7 +241,7 @@
     <parent>
         <artifactId>azure-data-lake-storage-gen2-document-files-virtual-schema-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
 </project>
