@@ -207,6 +207,7 @@
                         Excluded because we assume that the attacker does not have local access to the machine.
                         Can be removed once com.azure:azure-core-http-netty upgrades to a newer netty version. -->
                         <exclude>CVE-2022-24823</exclude>
+                        <exclude>CVE-2022-2047</exclude>
                     </excludeVulnerabilityIds>
                 </configuration>
             </plugin>
