@@ -209,6 +209,7 @@
                         <exclude>CVE-2022-24823</exclude>
                         <exclude>CVE-2022-2047</exclude>
                         <exclude>CVE-2022-30187</exclude>
+                        <exclude>CVE-2022-38752</exclude>
                     </excludeVulnerabilityIds>
                 </configuration>
             </plugin>
@@ -243,7 +244,7 @@
     <parent>
         <artifactId>azure-data-lake-storage-gen2-document-files-virtual-schema-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
 </project>
