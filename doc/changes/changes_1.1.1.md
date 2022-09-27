@@ -12,7 +12,6 @@ Code name:
 
 ### Compile Dependency Updates
 
-* Updated `com.azure:azure-storage-blob:12.17.1` to `12.19.1`
 * Updated `com.exasol:virtual-schema-common-document-files:7.1.0` to `7.1.1`
 
 ### Test Dependency Updates
