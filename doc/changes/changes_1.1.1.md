@@ -1,12 +1,10 @@
-# Virtual Schema for document data in files on Azure Data Lake Storage Gen 2 1.1.1, released 2022-??-??
+# Virtual Schema for document data in files on Azure Data Lake Storage Gen 2 1.1.1, released 2022-09-28
 
-Code name:
+Code name: CVE Warnings
 
 ## Summary
 
-## Features
-
-* ISSUE_NUMBER: description
+Fix CVE Warnings + Dependency Updates
 
 ## Dependency Updates
 
