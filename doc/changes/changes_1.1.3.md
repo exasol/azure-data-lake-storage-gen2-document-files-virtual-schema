@@ -6,6 +6,8 @@ Code name: Fixed CVE-2022-42004
 
 The dependency `com.fasterxml.jackson.core:jackson-databind` in version 2.13.4 is vulnerable to CVE-2022-42004, so we updated to 2.14.0, which is not affected.
 
+We also removed Lombok from the project.
+
 ### Known Issues
 
 The following vulnerabilities are still open because no update existed at the time of this release in the upstream.
@@ -42,6 +44,7 @@ The following vulnerabilities are still open because no update existed at the ti
 ### Test Dependency Updates
 
 * Updated `com.exasol:exasol-test-setup-abstraction-java:0.3.2` to `1.0.0`
+* Updated `com.exasol:udf-debugging-java:0.6.4` to `0.6.5`
 * Updated `org.mockito:mockito-core:4.8.1` to `4.9.0`
 * Updated `org.testcontainers:junit-jupiter:1.17.5` to `1.17.6`
 * Updated `org.testcontainers:localstack:1.17.5` to `1.17.6`
@@ -58,3 +61,4 @@ The following vulnerabilities are still open because no update existed at the ti
 * Updated `org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5` to `3.0.0-M7`
 * Updated `org.codehaus.mojo:flatten-maven-plugin:1.2.7` to `1.3.0`
 * Updated `org.codehaus.mojo:versions-maven-plugin:2.10.0` to `2.13.0`
+* Removed `org.projectlombok:lombok-maven-plugin:1.18.20.0`

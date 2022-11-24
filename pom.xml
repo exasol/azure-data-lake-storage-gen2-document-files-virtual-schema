@@ -10,7 +10,7 @@
         <junit.version>5.9.1</junit.version>
         <org.testcontainers.version>1.17.6</org.testcontainers.version>
         <vs-common-document-files.version>7.1.2</vs-common-document-files.version>
-        <jackson.version>2.14.0</jackson.version>
+        <jackson.version>2.14.1</jackson.version>
     </properties>
     <profiles>
         <profile>
@@ -161,7 +161,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>udf-debugging-java</artifactId>
-            <version>0.6.4</version>
+            <version>0.6.5</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -188,7 +188,6 @@
             <version>0.1.2</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>

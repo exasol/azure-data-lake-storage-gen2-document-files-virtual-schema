@@ -14,8 +14,6 @@ import jakarta.json.Json;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonObjectBuilder;
 import jakarta.json.JsonWriter;
-import lombok.Getter;
-import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.ByteArrayOutputStream;
@@ -44,9 +42,7 @@ public class IntegrationTestSetup implements AutoCloseable {
     private final AdlsTestSetup adlsTestSetup;
     private final DataLakeFileSystemClient adlsContainer;
     private final UdfTestSetup udfTestSetup;
-    @Getter
-    @Setter
-    private ConnectionDefinition connectionDefinition;
+    private final ConnectionDefinition connectionDefinition;
 
     public IntegrationTestSetup(final ExasolTestSetup exasolTestSetup, final AdlsTestSetup adlsTestSetup,
                                 final DataLakeFileSystemClient adlsContainer)

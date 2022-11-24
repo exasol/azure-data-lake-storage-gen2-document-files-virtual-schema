@@ -6,12 +6,9 @@ import com.azure.storage.file.datalake.DataLakeFileSystemClient;
 import com.azure.storage.file.datalake.DataLakeServiceClient;
 import com.azure.storage.file.datalake.models.PathItem;
 import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
-import lombok.Getter;
 
 public class TestContainer implements AutoCloseable {
-    @Getter
     private final DataLakeFileSystemClient dataLakeFileSystemClient;
-    @Getter
     private final String adlsContainerName;
 
     public TestContainer(final AdlsTestSetup testSetup) {
@@ -38,5 +35,23 @@ public class TestContainer implements AutoCloseable {
     public void close() {
         empty();
         this.dataLakeFileSystemClient.delete();
+    }
+
+    /**
+     * Get the data lake filesystem client.
+     *
+     * @return file system client
+     */
+    public DataLakeFileSystemClient getDataLakeFileSystemClient() {
+        return dataLakeFileSystemClient;
+    }
+
+    /**
+     * Get the container name.
+     *
+     * @return container name
+     */
+    public String getAdlsContainerName() {
+        return adlsContainerName;
     }
 }
