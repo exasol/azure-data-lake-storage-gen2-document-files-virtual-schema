@@ -45,6 +45,7 @@ The following vulnerabilities are still open because no update existed at the ti
 
 * Updated `com.exasol:exasol-test-setup-abstraction-java:0.3.2` to `1.0.0`
 * Updated `com.exasol:udf-debugging-java:0.6.4` to `0.6.5`
+* Added `nl.jqno.equalsverifier:equalsverifier:3.11.1`
 * Updated `org.mockito:mockito-core:4.8.1` to `4.9.0`
 * Updated `org.testcontainers:junit-jupiter:1.17.5` to `1.17.6`
 * Updated `org.testcontainers:localstack:1.17.5` to `1.17.6`
