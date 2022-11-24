@@ -30,11 +30,11 @@ The following vulnerabilities are still open because no update existed at the ti
 * Updated `com.azure:azure-identity:1.6.1` to `1.7.1`
 * Updated `com.azure:azure-storage-blob:12.20.0` to `12.20.1`
 * Updated `com.azure:azure-storage-file-datalake:12.13.0` to `12.13.1`
-* Updated `com.fasterxml.jackson.core:jackson-annotations:2.13.4` to `2.14.0`
-* Updated `com.fasterxml.jackson.core:jackson-core:2.13.4` to `2.14.0`
-* Updated `com.fasterxml.jackson.core:jackson-databind:2.13.4.2` to `2.14.0`
-* Updated `com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.4` to `2.14.0`
-* Updated `com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4` to `2.14.0`
+* Updated `com.fasterxml.jackson.core:jackson-annotations:2.13.4` to `2.14.1`
+* Updated `com.fasterxml.jackson.core:jackson-core:2.13.4` to `2.14.1`
+* Updated `com.fasterxml.jackson.core:jackson-databind:2.13.4.2` to `2.14.1`
+* Updated `com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.4` to `2.14.1`
+* Updated `com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4` to `2.14.1`
 
 ### Runtime Dependency Updates
 
