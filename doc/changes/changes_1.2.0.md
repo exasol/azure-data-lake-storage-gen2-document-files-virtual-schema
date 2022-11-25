@@ -6,7 +6,7 @@ Code name: Fixed CVE-2022-42004
 
 The dependency `com.fasterxml.jackson.core:jackson-databind` in version 2.13.4 is vulnerable to CVE-2022-42004, so we updated to 2.14.1, which is not affected.
 
-We also removed Lombok from the project.
+We also unified the way [debug output](../developer_guide/developer_guide.md#getting-debug-output) is controlled and removed Lombok from the project.
 
 ### Known Issues
 
