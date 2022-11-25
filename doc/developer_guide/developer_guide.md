@@ -4,7 +4,7 @@ This guide contains information for developers.
 
 ## Credentials
 Since we don't have an emulator most tests are run on an actual datalake storage account.
-You got to provide an accountkey.txt and accountname.txt file with the corresponding values for the datalake storage account (key and accountname) if you want to run the tests locally.
+You got to provide an `accountkey.txt` and `accountname.txt` file with the corresponding values for the datalake storage account (key and account name) if you want to run the tests locally.
 
 ## Running Regression Test
 
@@ -18,7 +18,14 @@ However, a local run won't give you reliable numbers, since it's dependent on yo
 
 ## Getting Debug Output
 
-In order to get the log output from inside the database set the system property `test.udf-logs=true` (by adding it with `-D` as jvm option in your IDE's test config) and check the files in `target/udf-logs/`.
+You can control the log output produced by the Virtual Schema with the following system properties:
+
+| System property                          | Meaning                                  | Default value |
+|------------------------------------------|------------------------------------------|---------------|
+| `com.exasol.virtualschema.debug.address` | Sets host and port of the log receiver   | `null`        |
+| `com.exasol.virtualschema.debug.level`   | Sets the log level                       | `ALL`         | 
+
+See also: [Remote Logging](https://docs.exasol.com/db/latest/database_concepts/virtual_schema/logging.htm) 
 
 ## Debugging & Profiling
 

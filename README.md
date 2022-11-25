@@ -26,6 +26,6 @@ For supported document file formats, see [Files Virtual Schema][files-vs].
 ## Information for Developers
 
 * [Dependencies](dependencies.md)
-* [Developers Guide](doc/developers_guide/developers_guide.md)
+* [Developers Guide](doc/developer_guide/developer_guide.md)
 
 [files-vs]: https://github.com/exasol/virtual-schema-common-document-files
