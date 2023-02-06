@@ -31,7 +31,7 @@ import java.util.concurrent.TimeoutException;
 import static com.exasol.adapter.document.GenericUdfCallHandler.*;
 
 public class IntegrationTestSetup implements AutoCloseable {
-    private static final String ADAPTER_JAR = "document-files-virtual-schema-dist-7.1.2-azure-datalake-storage-gen2-1.2.0.jar";
+    private static final String ADAPTER_JAR = "document-files-virtual-schema-dist-7.1.4-azure-datalake-storage-gen2-1.2.1.jar";
     private final ExasolTestSetup exasolTestSetup;
     private final Connection exasolConnection;
     private final Statement exasolStatement;
