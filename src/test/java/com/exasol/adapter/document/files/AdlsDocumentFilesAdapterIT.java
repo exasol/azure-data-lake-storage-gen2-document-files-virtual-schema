@@ -12,7 +12,6 @@ import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Supplier;
 
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 
 import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
@@ -41,7 +40,6 @@ class AdlsDocumentFilesAdapterIT extends AbstractDocumentFilesAdapterIT {
         setup = new IntegrationTestSetup(exasolTestSetup, adlsTestSetup, testContainer.getDataLakeFileSystemClient());
     }
 
-    @NotNull
     private static AdlsTestSetup getAdlsTestSetup(final ExasolTestSetup exasolTestSetup) {
         return new OnlineAdlsTestSetup();
     }

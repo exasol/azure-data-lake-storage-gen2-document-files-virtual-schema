@@ -1,5 +1,14 @@
 package com.exasol.adapter.document.files;
 
+import static com.exasol.adapter.document.GenericUdfCallHandler.*;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.sql.*;
+import java.util.*;
+import java.util.concurrent.TimeoutException;
+
 import com.azure.storage.file.datalake.DataLakeFileSystemClient;
 import com.exasol.adapter.document.UdfEntryPoint;
 import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
@@ -10,25 +19,8 @@ import com.exasol.dbbuilder.dialects.exasol.*;
 import com.exasol.dbbuilder.dialects.exasol.udf.UdfScript;
 import com.exasol.exasoltestsetup.ExasolTestSetup;
 import com.exasol.udfdebugging.UdfTestSetup;
-import jakarta.json.Json;
-import jakarta.json.JsonObject;
-import jakarta.json.JsonObjectBuilder;
-import jakarta.json.JsonWriter;
-import org.jetbrains.annotations.NotNull;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.UncheckedIOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.*;
-import java.util.concurrent.TimeoutException;
-
-import static com.exasol.adapter.document.GenericUdfCallHandler.*;
+import jakarta.json.*;
 
 public class IntegrationTestSetup implements AutoCloseable {
     private static final String ADAPTER_JAR = "document-files-virtual-schema-dist-7.2.0-azure-datalake-storage-gen2-1.3.0.jar";
@@ -45,7 +37,7 @@ public class IntegrationTestSetup implements AutoCloseable {
     private final ConnectionDefinition connectionDefinition;
 
     public IntegrationTestSetup(final ExasolTestSetup exasolTestSetup, final AdlsTestSetup adlsTestSetup,
-                                final DataLakeFileSystemClient adlsContainer)
+            final DataLakeFileSystemClient adlsContainer)
             throws SQLException, BucketAccessException, TimeoutException, FileNotFoundException {
 
         this.adlsTestSetup = adlsTestSetup;
@@ -63,7 +55,7 @@ public class IntegrationTestSetup implements AutoCloseable {
         this.exasolObjectFactory = new ExasolObjectFactory(this.exasolConnection,
                 ExasolObjectConfiguration.builder().withJvmOptions(jvmOptions.toArray(String[]::new)).build());
         final ExasolSchema adapterSchema = this.exasolObjectFactory.createSchema("ADAPTER");
-        //create a connection to Azure Data Lake Storage Gen 2
+        // create a connection to Azure Data Lake Storage Gen 2
         this.connectionDefinition = createConnectionDefinition();
 
         this.adapterScript = createAdapterScript(adapterSchema);
@@ -94,14 +86,14 @@ public class IntegrationTestSetup implements AutoCloseable {
     }
 
     public ConnectionDefinition createConnectionDefinition(final JsonObjectBuilder details) {
-        String json = toJson(details.build());
+        final String json = toJson(details.build());
         return this.exasolObjectFactory.createConnectionDefinition("ADLS_CONNECTION_" + System.currentTimeMillis(), "",
                 "", json);
     }
 
     private String toJson(final JsonObject configJson) {
         try (final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-             final JsonWriter writer = Json.createWriter(outputStream)) {
+                final JsonWriter writer = Json.createWriter(outputStream)) {
             writer.write(configJson);
             return outputStream.toString(StandardCharsets.UTF_8);
         } catch (final IOException exception) {
@@ -134,7 +126,7 @@ public class IntegrationTestSetup implements AutoCloseable {
     }
 
     protected VirtualSchema createVirtualSchema(final String schemaName, final String mapping,
-                                                final ConnectionDefinition connection) {
+            final ConnectionDefinition connection) {
         final VirtualSchema virtualSchema = getPreconfiguredVirtualSchemaBuilder(schemaName)
                 .connectionDefinition(connection)//
                 .properties(getVirtualSchemaProperties(mapping)).build();
@@ -142,7 +134,6 @@ public class IntegrationTestSetup implements AutoCloseable {
         return virtualSchema;
     }
 
-    @NotNull
     private Map<String, String> getVirtualSchemaProperties(final String mapping) {
         final Map<String, String> properties = new HashMap<>(Map.of("MAPPING", mapping));
         final String debugProperty = System.getProperty("test.debug", "");
@@ -150,7 +141,19 @@ public class IntegrationTestSetup implements AutoCloseable {
         if (!debugProperty.isBlank() || !profileProperty.isBlank()) {
             properties.put("MAX_PARALLEL_UDFS", "1");
         }
+        properties.putAll(debugProperties());
         return properties;
+    }
+
+    private Map<String, String> debugProperties() {
+        final String debugHost = System.getProperty("com.exasol.log.host", null);
+        if (debugHost == null) {
+            return Collections.emptyMap();
+        }
+        final String debugPort = System.getProperty("com.exasol.log.port", "3000");
+        final String logLevel = System.getProperty("com.exasol.log.level", "ALL");
+        final String address = debugHost + ":" + debugPort;
+        return Map.of("DEBUG_ADDRESS", address, "LOG_LEVEL", logLevel);
     }
 
     public void dropCreatedObjects() {
