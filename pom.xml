@@ -217,47 +217,26 @@
                 <artifactId>ossindex-maven-plugin</artifactId>
                 <configuration>
                     <excludeVulnerabilityIds>
-                        <!-- com.google.guava:guava:
-                        https://ossindex.sonatype.org/vulnerability/sonatype-2020-0926
-                        Excluded because we assume that the attacker does not have local access to the machine. -->
+                        <!-- com.google.guava:guava: https://ossindex.sonatype.org/vulnerability/sonatype-2020-0926
+                             Excluded because we assume that the attacker does not have local access to the machine. -->
                         <exclude>sonatype-2020-0926</exclude>
-                        <!-- io.netty:netty-handler:
-                        https://ossindex.sonatype.org/vulnerability/sonatype-2020-0026
-                        Not a vulnerability in netty but how it is configured by the client
-                        com.azure:azure-core-http-netty. -->
+                        <!-- io.netty:netty-handler: https://ossindex.sonatype.org/vulnerability/sonatype-2020-0026
+                             Not a vulnerability in netty but how it is configured by the client com.azure:azure-core-http-netty. -->
                         <exclude>sonatype-2020-0026</exclude>
-                        <!-- org.apache.hadoop:hadoop-common:jar:3.3.4 -->
-                        <!-- Rationale for exclusion: No update available, yet. -->
+                        <!-- org.apache.hadoop:hadoop-common:jar:3.3.4
+                             Rationale for exclusion: No update available, yet. -->
                         <exclude>sonatype-2022-5820</exclude>
-                        <!-- org.apache.hadoop:hadoop-hdfs-client:jar:3.3.4 -->
-                        <!-- Rationale for exclusion: No update available, yet. -->
-                        <exclude>CVE-2022-31684</exclude>
                         <!-- Hadoop HDFS: https://issues.apache.org/jira/browse/HDFS-16766-->
                         <exclude>sonatype-2022-5732</exclude>
-                        <!-- Ignore vulnerability com.fasterxml.jackson.core:jackson-core:2.14.1
-                             as
-                        an exploit requires write access to the source code repository
-                             and
-                        attempts to inject malicious code will be detected during regular
-                             code
-                        reviews. -->
+                        <!-- Ignore vulnerability com.fasterxml.jackson.core:jackson-core:2.14.1 as an exploit requires write access to the source code repository
+                             and attempts to inject malicious code will be detected during regular code reviews. -->
                         <exclude>sonatype-2022-6438</exclude>
-                        <!-- Ignore vulnerability in Transitive dependency fr.turri:aXMLRPC
-                                  via
-                        com.exasol:exasol-test-setup-abstraction-java:jar.
-                                  CVE-2020-36641
-                        is reported to be fixed in aXMLRPC 1.12.1, while ETAJ uses version 1.13.0,
-                        so this is a false positive. -->
+                        <!-- Ignore vulnerability in transitive dependency fr.turri:aXMLRPC via com.exasol:exasol-test-setup-abstraction-java:jar.
+                             CVE-2020-36641 is reported to be fixed in aXMLRPC 1.12.1, while ETAJ uses version 1.13.0, so this is a false positive. -->
                         <exclude>CVE-2020-36641</exclude>
-                        <!-- org.yaml.snakeyaml (1.33)
-                        Currently not fixed in latest version, however a test dependency and not used on untrusted files.
-                        https://ossindex.sonatype.org/vulnerability/CVE-2022-38750 -->
-                        <exclude>CVE-2022-1471</exclude>
-                        <!-- org.json:json:jar:20220924:
-                        Not an issue as the attacker does not control access to insert or adapt the JSON files to be read
-                        out.
-                        https://ossindex.sonatype.org/vulnerability/CVE-2022-45688 -->
-                        <exclude>CVE-2022-45688</exclude>
+                        <!-- net.minidev:json-smart:jar:2.4.8 is a transitive dependency of com.azure:azure-identity. Upgrading is not possible due to constraints in com.azure:azure-identity.
+                             We assume that only data from trusted sources use used. -->
+                        <exclude>CVE-2023-1370</exclude>
                     </excludeVulnerabilityIds>
                 </configuration>
             </plugin>
