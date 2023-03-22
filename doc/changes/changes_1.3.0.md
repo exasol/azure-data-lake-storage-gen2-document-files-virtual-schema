@@ -38,6 +38,8 @@ This release adds automatic schema inference for Parquet files. This means that 
 * Removed `commons-net:commons-net:3.9.0`
 * Updated `nl.jqno.equalsverifier:equalsverifier:3.13` to `3.14.1`
 * Updated `org.mockito:mockito-core:5.1.1` to `5.2.0`
+* Removed `org.testcontainers:junit-jupiter:1.17.6`
+* Removed `org.testcontainers:localstack:1.17.6`
 * Removed `org.yaml:snakeyaml:1.33`
 
 ### Plugin Dependency Updates
