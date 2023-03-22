@@ -1,24 +1,18 @@
 package com.exasol.adapter.document.files;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.*;
+
 import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
 import com.exasol.adapter.document.files.adlstestsetup.OnlineAdlsTestSetup;
 import com.exasol.adapter.document.files.connection.AdlsConnectionProperties;
 import com.exasol.adapter.document.files.stringfilter.wildcardexpression.WildcardExpression;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsInAnyOrder;
 
 @Tag("integration")
 class AdlsRemoteFileFinderOnlineIT {
@@ -30,9 +24,9 @@ class AdlsRemoteFileFinderOnlineIT {
     @BeforeAll
     static void beforeAll() {
         testContainer = new TestContainer(TEST_SETUP);
-        var dlFileSystemClient = testContainer.getDataLakeFileSystemClient();
-        var file1 = dlFileSystemClient.getFileClient("file-1.json");
-        Helperfunctions.uploadBytes(CONTENT_1.getBytes(), file1);
+        final var dlFileSystemClient = testContainer.getDataLakeFileSystemClient();
+        final var file1 = dlFileSystemClient.getFileClient("file-1.json");
+        HelperFunctions.uploadBytes(CONTENT_1.getBytes(), file1);
         connectionInformation = AdlsConnectionProperties.builder() //
                 .adlsContainerName(testContainer.getDataLakeFileSystemClient().getFileSystemName()) //
                 .adlsStorageAccountName(TEST_SETUP.getStorageAccountName()) //

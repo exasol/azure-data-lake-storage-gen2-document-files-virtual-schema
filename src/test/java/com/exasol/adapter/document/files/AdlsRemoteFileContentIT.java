@@ -1,22 +1,18 @@
 package com.exasol.adapter.document.files;
 
-import com.exasol.adapter.document.documentfetcher.files.RemoteFileContent;
-import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
-import com.exasol.adapter.document.files.adlstestsetup.OnlineAdlsTestSetup;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.concurrent.*;
+
+import org.junit.jupiter.api.*;
+
+import com.exasol.adapter.document.documentfetcher.files.RemoteFileContent;
+import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
+import com.exasol.adapter.document.files.adlstestsetup.OnlineAdlsTestSetup;
 
 class AdlsRemoteFileContentIT {
     private static final String TEST_DATA_VALUE = "test content";
@@ -30,9 +26,9 @@ class AdlsRemoteFileContentIT {
     static void beforeAll() {
         testSetup = new OnlineAdlsTestSetup();
         testBucket = new TestContainer(testSetup);
-        var dlFilesystemClient = testBucket.getDataLakeFileSystemClient();
-        var dlFileClient = dlFilesystemClient.getFileClient(TEST_DATA_KEY);
-        Helperfunctions.uploadBytes(TEST_DATA_VALUE.getBytes(), dlFileClient);
+        final var dlFilesystemClient = testBucket.getDataLakeFileSystemClient();
+        final var dlFileClient = dlFilesystemClient.getFileClient(TEST_DATA_KEY);
+        HelperFunctions.uploadBytes(TEST_DATA_VALUE.getBytes(), dlFileClient);
         executorServiceFactory = new ExecutorServiceFactory();
         remoteFileContent = new AdlsRemoteFileContent(testBucket.getDataLakeFileSystemClient(),
                 new AdlsObjectDescription(TEST_DATA_KEY, TEST_DATA_VALUE.length()), executorServiceFactory);

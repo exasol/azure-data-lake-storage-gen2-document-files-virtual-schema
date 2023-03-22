@@ -11,9 +11,11 @@ import com.exasol.adapter.document.files.stringfilter.StringFilter;
  */
 public class AdlsFileFinderFactory implements FileFinderFactory {
 
+    private static final long serialVersionUID = 1L;
+
     @Override
     public RemoteFileFinder getFinder(final StringFilter filePattern,
-                                      final ConnectionPropertiesReader connectionInformation) {
+            final ConnectionPropertiesReader connectionInformation) {
         return new AdlsRemoteFileFinder(filePattern, new AdlsConnectionPropertiesReader().read(connectionInformation));
     }
 

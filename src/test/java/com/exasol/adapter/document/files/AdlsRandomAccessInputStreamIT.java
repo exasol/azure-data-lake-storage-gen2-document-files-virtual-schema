@@ -6,7 +6,6 @@ import com.exasol.adapter.document.documentfetcher.files.randomaccessinputstream
 import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
 import com.exasol.adapter.document.files.adlstestsetup.OnlineAdlsTestSetup;
 
-
 class AdlsRandomAccessInputStreamIT extends RandomAccessInputStreamTestBase {
     private static final String TEST_DATA_KEY = "TEST_DATA";
     private long testDataLength;
@@ -20,14 +19,16 @@ class AdlsRandomAccessInputStreamIT extends RandomAccessInputStreamTestBase {
         this.testContainer = new TestContainer(this.testSetup);
         this.testDataLength = bytes.length;
 
-        var dlFileSystemClient = testContainer.getDataLakeFileSystemClient();
+        final var dlFileSystemClient = testContainer.getDataLakeFileSystemClient();
         dlFileClient = dlFileSystemClient.getFileClient(TEST_DATA_KEY);
-        Helperfunctions.uploadBytes(bytes, dlFileClient);
+        HelperFunctions.uploadBytes(bytes, dlFileClient);
     }
 
     @Override
     protected void cleanupTestSetup() {
-        this.testContainer.close();
+        if (this.testContainer != null) {
+            this.testContainer.close();
+        }
         this.testSetup.close();
     }
 
