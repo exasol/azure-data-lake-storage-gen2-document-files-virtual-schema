@@ -1,5 +1,20 @@
 package com.exasol.adapter.document.files;
 
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.*;
+import java.sql.Statement;
+import java.util.Map;
+import java.util.concurrent.TimeoutException;
+import java.util.function.Supplier;
+
+import org.jetbrains.annotations.NotNull;
+import org.junit.jupiter.api.*;
+
 import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
 import com.exasol.adapter.document.files.adlstestsetup.OnlineAdlsTestSetup;
 import com.exasol.bucketfs.BucketAccessException;
@@ -8,26 +23,8 @@ import com.exasol.dbbuilder.dialects.exasol.ConnectionDefinition;
 import com.exasol.dbbuilder.dialects.exasol.VirtualSchema;
 import com.exasol.exasoltestsetup.ExasolTestSetup;
 import com.exasol.exasoltestsetup.ExasolTestSetupFactory;
-import org.jetbrains.annotations.NotNull;
-import org.junit.jupiter.api.*;
-import org.testcontainers.junit.jupiter.Testcontainers;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.sql.Statement;
-import java.util.Map;
-import java.util.concurrent.TimeoutException;
-import java.util.function.Supplier;
-
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Tag("integration")
-@Testcontainers
 class AdlsDocumentFilesAdapterIT extends AbstractDocumentFilesAdapterIT {
     private static IntegrationTestSetup setup;
     private static TestContainer testContainer;
@@ -39,7 +36,7 @@ class AdlsDocumentFilesAdapterIT extends AbstractDocumentFilesAdapterIT {
                 Path.of("cloudSetup/generated/testConfig.json")).getTestSetup();
 
         adlsTestSetup = getAdlsTestSetup(exasolTestSetup);
-        //this will set up a new Azure Data Lake Storage Gen 2 test container for us
+        // This will set up a new Azure Data Lake Storage Gen 2 test container for us
         testContainer = new TestContainer(adlsTestSetup);
         setup = new IntegrationTestSetup(exasolTestSetup, adlsTestSetup, testContainer.getDataLakeFileSystemClient());
     }
