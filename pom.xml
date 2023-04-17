@@ -10,7 +10,7 @@
     <url>https://github.com/exasol/azure-data-lake-storage-gen2-document-files-virtual-schema/</url>
     <properties>
         <org.testcontainers.version>1.18.0</org.testcontainers.version>
-        <vs-common-document-files.version>7.2.0</vs-common-document-files.version>
+        <vs-common-document-files.version>7.2.1</vs-common-document-files.version>
         <jackson.version>2.14.2</jackson.version>
     </properties>
     <profiles>
@@ -127,15 +127,9 @@
                 <artifactId>ossindex-maven-plugin</artifactId>
                 <configuration>
                     <excludeVulnerabilityIds>
-                        <!-- com.google.guava:guava: https://ossindex.sonatype.org/vulnerability/sonatype-2020-0926
-                             Excluded because we assume that the attacker does not have local access to the machine. -->
-                        <exclude>sonatype-2020-0926</exclude>
                         <!-- io.netty:netty-handler: https://ossindex.sonatype.org/vulnerability/sonatype-2020-0026
                              Not a vulnerability in netty but how it is configured by the client com.azure:azure-core-http-netty. -->
                         <exclude>sonatype-2020-0026</exclude>
-                        <!-- org.apache.hadoop:hadoop-common:jar:3.3.4
-                             Rationale for exclusion: No update available, yet. -->
-                        <exclude>sonatype-2022-5820</exclude>
                         <!-- Hadoop HDFS: https://issues.apache.org/jira/browse/HDFS-16766-->
                         <exclude>sonatype-2022-5732</exclude>
                         <!-- Ignore vulnerability com.fasterxml.jackson.core:jackson-core:2.14.1 as an exploit requires write access to the source code repository
@@ -148,6 +142,16 @@
                              We assume that only data from trusted sources use used. -->
                         <exclude>CVE-2023-1370</exclude>
                     </excludeVulnerabilityIds>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.basepom.maven</groupId>
+                <artifactId>duplicate-finder-maven-plugin</artifactId>
+                <configuration>
+                    <!-- org.apache.parquet:parquet-column and org.apache.parquet:parquet-hadoop both contain classes shaded.parquet.it.unimi.dsi.fastutil.** -->
+                    <failBuildInCaseOfEqualContentConflict>false</failBuildInCaseOfEqualContentConflict>
+                    <failBuildInCaseOfConflict>false</failBuildInCaseOfConflict>
+                    <printEqualFiles>false</printEqualFiles>
                 </configuration>
             </plugin>
             <plugin>
