@@ -127,14 +127,6 @@
                 <artifactId>ossindex-maven-plugin</artifactId>
                 <configuration>
                     <excludeVulnerabilityIds>
-                        <!-- io.netty:netty-handler: https://ossindex.sonatype.org/vulnerability/sonatype-2020-0026
-                             Not a vulnerability in netty but how it is configured by the client com.azure:azure-core-http-netty. -->
-                        <exclude>sonatype-2020-0026</exclude>
-                        <!-- Hadoop HDFS: https://issues.apache.org/jira/browse/HDFS-16766-->
-                        <exclude>sonatype-2022-5732</exclude>
-                        <!-- Ignore vulnerability com.fasterxml.jackson.core:jackson-core:2.14.1 as an exploit requires write access to the source code repository
-                             and attempts to inject malicious code will be detected during regular code reviews. -->
-                        <exclude>sonatype-2022-6438</exclude>
                         <!-- Ignore vulnerability in transitive dependency fr.turri:aXMLRPC via com.exasol:exasol-test-setup-abstraction-java:jar.
                              CVE-2020-36641 is reported to be fixed in aXMLRPC 1.12.1, while ETAJ uses version 1.13.0, so this is a false positive. -->
                         <exclude>CVE-2020-36641</exclude>
