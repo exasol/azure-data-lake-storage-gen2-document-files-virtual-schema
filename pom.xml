@@ -10,7 +10,7 @@
     <url>https://github.com/exasol/azure-data-lake-storage-gen2-document-files-virtual-schema/</url>
     <properties>
         <org.testcontainers.version>1.18.0</org.testcontainers.version>
-        <vs-common-document-files.version>7.3.1</vs-common-document-files.version>
+        <vs-common-document-files.version>7.3.2</vs-common-document-files.version>
         <jackson.version>2.14.2</jackson.version>
     </properties>
     <profiles>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-core</artifactId>
-            <version>1.38.0</version>
+            <version>1.39.0</version>
         </dependency>
         <!-- Test dependencies -->
         <dependency>
