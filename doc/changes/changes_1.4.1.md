@@ -1,4 +1,4 @@
-# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 1.4.1, released 2023-05-03
+# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 1.4.1, released 2023-05-08
 
 Code name: CSV Performance Regression Tests
 
