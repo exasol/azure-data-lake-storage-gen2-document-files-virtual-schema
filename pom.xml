@@ -4,13 +4,13 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>azure-data-lake-storage-gen2-document-files-virtual-schema</artifactId>
-    <version>1.4.1</version>
+    <version>1.4.2</version>
     <name>Virtual Schema for document data in files on Azure Data Lake Storage Gen 2</name>
     <description>Adapter for document data access from files from Azure Data Lake Storage Gen 2.</description>
     <url>https://github.com/exasol/azure-data-lake-storage-gen2-document-files-virtual-schema/</url>
     <properties>
         <org.testcontainers.version>1.18.0</org.testcontainers.version>
-        <vs-common-document-files.version>7.3.2</vs-common-document-files.version>
+        <vs-common-document-files.version>7.3.3</vs-common-document-files.version>
         <jackson.version>2.14.2</jackson.version>
     </properties>
     <profiles>
@@ -44,17 +44,17 @@
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-storage-file-datalake</artifactId>
-            <version>12.15.0</version>
+            <version>12.15.3</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-identity</artifactId>
-            <version>1.9.0</version>
+            <version>1.9.1</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-core</artifactId>
-            <version>1.39.0</version>
+            <version>1.40.0</version>
         </dependency>
         <!-- Test dependencies -->
         <dependency>
@@ -79,7 +79,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>5.3.1</version>
+            <version>5.4.0</version>
             <scope>test</scope>
         </dependency>
         <!--Integration test dependencies-->
@@ -104,7 +104,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-test-setup-abstraction-java</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -116,7 +116,7 @@
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <version>3.14.1</version>
+            <version>3.14.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -130,9 +130,6 @@
                         <!-- Ignore vulnerability in transitive dependency fr.turri:aXMLRPC via com.exasol:exasol-test-setup-abstraction-java:jar.
                              CVE-2020-36641 is reported to be fixed in aXMLRPC 1.12.1, while ETAJ uses version 1.13.0, so this is a false positive. -->
                         <exclude>CVE-2020-36641</exclude>
-                        <!-- net.minidev:json-smart:jar:2.4.8 is a transitive dependency of com.azure:azure-identity. Upgrading is not possible due to constraints in com.azure:azure-identity.
-                             We assume that only data from trusted sources use used. -->
-                        <exclude>CVE-2023-1370</exclude>
                     </excludeVulnerabilityIds>
                 </configuration>
             </plugin>
@@ -177,7 +174,7 @@
     <parent>
         <artifactId>azure-data-lake-storage-gen2-document-files-virtual-schema-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>1.4.1</version>
+        <version>1.4.2</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
 </project>
