@@ -24,7 +24,7 @@
 | [Matcher for SQL Result Sets][16]              | [MIT License][17]                 |
 | [exasol-test-setup-abstraction-java][18]       | [MIT License][19]                 |
 | [Performance Test Recorder Java][20]           | [MIT License][21]                 |
-| [EqualsVerifier | release normal jar][22]      | [Apache License, Version 2.0][23] |
+| [EqualsVerifier \| release normal jar][22]     | [Apache License, Version 2.0][23] |
 | [JaCoCo :: Agent][24]                          | [Eclipse Public License 2.0][25]  |
 
 ## Plugin Dependencies
@@ -40,10 +40,10 @@
 | [Versions Maven Plugin][34]                             | [Apache License, Version 2.0][23]              |
 | [duplicate-finder-maven-plugin Maven Mojo][35]          | [Apache License 2.0][36]                       |
 | [Project keeper maven plugin][37]                       | [The MIT License][38]                          |
-| [Apache Maven Assembly Plugin][39]                      | [Apache License, Version 2.0][23]              |
+| [Apache Maven Assembly Plugin][39]                      | [Apache-2.0][23]                               |
 | [Apache Maven JAR Plugin][40]                           | [Apache License, Version 2.0][23]              |
 | [Artifact reference checker and unifier][41]            | [MIT License][42]                              |
-| [Apache Maven Dependency Plugin][43]                    | [Apache License, Version 2.0][23]              |
+| [Apache Maven Dependency Plugin][43]                    | [Apache-2.0][23]                               |
 | [Maven Failsafe Plugin][44]                             | [Apache-2.0][23]                               |
 | [JaCoCo :: Maven Plugin][45]                            | [Eclipse Public License 2.0][25]               |
 | [error-code-crawler-maven-plugin][46]                   | [MIT License][47]                              |
@@ -89,7 +89,7 @@
 [32]: http://www.apache.org/licenses/LICENSE-2.0.txt
 [33]: https://maven.apache.org/surefire/maven-surefire-plugin/
 [34]: https://www.mojohaus.org/versions/versions-maven-plugin/
-[35]: https://github.com/basepom/duplicate-finder-maven-plugin
+[35]: https://basepom.github.io/duplicate-finder-maven-plugin
 [36]: http://www.apache.org/licenses/LICENSE-2.0.html
 [37]: https://github.com/exasol/project-keeper/
 [38]: https://github.com/exasol/project-keeper/blob/main/LICENSE
