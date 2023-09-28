@@ -17,6 +17,8 @@ jobs:
           distribution: "temurin"
           java-version: 11
           cache: "maven"
+      - name: Enable testcontainer reuse
+        run: echo 'testcontainers.reuse.enable=true' > "$HOME/.testcontainers.properties"
       - name: Write ADLSG2 accountkey file
         run: |
           echo "$ACCOUNTKEY" > accountkey.txt
