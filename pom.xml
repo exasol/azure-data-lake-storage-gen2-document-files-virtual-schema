@@ -42,6 +42,12 @@
             <artifactId>azure-storage-file-datalake</artifactId>
             <version>12.18.0</version>
         </dependency>
+        <!-- Upgrade transitive dependency of azure-storage-file-datalake to fix CVE-2023-34062 -->
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty-http</artifactId>
+            <version>1.0.39</version>
+        </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-identity</artifactId>
@@ -82,7 +88,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>test-db-builder-java</artifactId>
-            <version>3.5.1</version>
+            <version>3.5.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -94,7 +100,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>hamcrest-resultset-matcher</artifactId>
-            <version>1.6.2</version>
+            <version>1.6.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>

@@ -1,14 +1,14 @@
-# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 1.4.5, released 2023-??-??
+# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 1.4.5, released 2023-11-22
 
-Code name: Test with Exasol v8
+Code name: Fix CVE-2023-34062 in `io.projectreactor.netty:reactor-netty-http`
 
 ## Summary
 
-This release adds integration tests with Exasol DB version 8.
+This release fixes CVE-2023-34062 (CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') (7.5)) in compile dependency `io.projectreactor.netty:reactor-netty-http`.
 
-## Features
+## Security
 
-* #41: Add tests with Exasol v8
+* #43: Fix CVE-2023-34062 in `io.projectreactor.netty:reactor-netty-http`
 
 ## Dependency Updates
 
@@ -18,11 +18,13 @@ This release adds integration tests with Exasol DB version 8.
 * Updated `com.azure:azure-identity:1.10.4` to `1.11.0`
 * Updated `com.azure:azure-storage-file-datalake:12.17.0` to `12.18.0`
 * Updated `com.exasol:virtual-schema-common-document-files:7.3.5` to `7.3.6`
+* Added `io.projectreactor.netty:reactor-netty-http:1.0.39`
 
 ### Test Dependency Updates
 
 * Updated `com.exasol:exasol-test-setup-abstraction-java:2.0.4` to `2.1.0`
-* Updated `com.exasol:hamcrest-resultset-matcher:1.6.1` to `1.6.2`
+* Updated `com.exasol:hamcrest-resultset-matcher:1.6.1` to `1.6.3`
+* Updated `com.exasol:test-db-builder-java:3.5.1` to `3.5.2`
 * Updated `com.exasol:virtual-schema-common-document-files:7.3.5` to `7.3.6`
 * Updated `nl.jqno.equalsverifier:equalsverifier:3.15.2` to `3.15.3`
 * Updated `org.junit.jupiter:junit-jupiter-params:5.10.0` to `5.10.1`
