@@ -17,7 +17,7 @@ Next create the Adapter Script:
  ```sql
 CREATE OR REPLACE JAVA ADAPTER SCRIPT ADAPTER.AZURE_DATALAKE_STORAGE_GEN2_FILES_ADAPTER AS
     %scriptclass com.exasol.adapter.RequestDispatcher;
-    %jar /buckets/bfsdefault/default/document-files-virtual-schema-dist-7.3.6-azure-datalake-storage-gen2-1.4.5.jar;
+    %jar /buckets/bfsdefault/default/document-files-virtual-schema-dist-8.0.0-azure-datalake-storage-gen2-2.0.0.jar;
 /
 ```
 
@@ -30,7 +30,7 @@ CREATE OR REPLACE JAVA SET SCRIPT ADAPTER.IMPORT_FROM_AZURE_DATA_LAKE_STORAGE_GE
   CONNECTION_NAME VARCHAR(500))
   EMITS(...) AS
     %scriptclass com.exasol.adapter.document.UdfEntryPoint;
-    %jar /buckets/bfsdefault/default/document-files-virtual-schema-dist-7.3.6-azure-datalake-storage-gen2-1.4.5.jar;
+    %jar /buckets/bfsdefault/default/document-files-virtual-schema-dist-8.0.0-azure-datalake-storage-gen2-2.0.0.jar;
 /
 ```
 
