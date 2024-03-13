@@ -110,7 +110,7 @@ public class IntegrationTestSetup implements AutoCloseable {
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() throws SQLException {
         this.udfTestSetup.close();
         this.exasolStatement.close();
         this.exasolConnection.close();
