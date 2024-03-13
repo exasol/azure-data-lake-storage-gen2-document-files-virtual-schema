@@ -16,6 +16,7 @@ Code name:
 * Updated `com.azure:azure-identity:1.11.1` to `1.11.3`
 * Updated `com.azure:azure-storage-file-datalake:12.18.1` to `12.18.2`
 * Updated `com.exasol:virtual-schema-common-document-files:8.0.0` to `8.0.2`
+* Added `com.nimbusds:nimbus-jose-jwt:9.37.3`
 
 ### Test Dependency Updates
 
