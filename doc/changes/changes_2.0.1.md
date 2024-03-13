@@ -1,12 +1,21 @@
-# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 2.0.1, released 2024-??-??
+# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 2.0.1, released 2024-03-13
 
-Code name:
+Code name: Fix vulnerabilities CVE-2023-52428, CVE-2024-26308 and CVE-2024-25710 in compile dependencies
 
 ## Summary
 
-## Features
+This release vulnerabilities in the following compile dependencies:
+* `com.nimbusds:nimbus-jose-jwt:jar:9.8.1:compile`:
+  * CVE-2023-52428
+* `org.apache.commons:commons-compress:jar:1.24.0:compile`:
+  * CVE-2024-26308
+  * CVE-2024-25710
 
-* ISSUE_NUMBER: description
+## Security
+
+* #46: Fixed CVE-2023-52428 in `com.nimbusds:nimbus-jose-jwt:jar:9.30.2:compile`
+* #47: Fixed CVE-2024-25710 in `org.apache.commons:commons-compress:jar:1.24.0:compile`
+* #48: Fixed CVE-2024-26308 in `org.apache.commons:commons-compress:jar:1.24.0:compile`
 
 ## Dependency Updates
 
