@@ -10,7 +10,18 @@ build:
   freeDiskSpace: false
   exasolDbVersions:
     - "8.24.0"
-    - "7.1.25"
-excludes:
-  # Configure Azure credentials
-  - "E-PK-CORE-18: Outdated content: '.github/workflows/ci-build.yml'"
+    - "7.1.26"
+  workflows:
+    - name: ci-build.yml
+      stepCustomizations:
+        - action: INSERT_AFTER
+          stepId: enable-testcontainer-reuse
+          content:
+            name: Configure Azure credentials
+            id: configure-azure-credentials
+            run: |
+              echo "$ACCOUNTKEY" > accountkey.txt
+              echo "$ACCOUNTNAME" > accountname.txt
+            env:
+              ACCOUNTKEY: ${{ secrets.ACCOUNTKEY }}
+              ACCOUNTNAME: ${{ secrets.ACCOUNTNAME }}
