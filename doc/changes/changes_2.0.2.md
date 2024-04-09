@@ -17,12 +17,14 @@ This release fixed vulnerabilities CVE-2024-29025, CVE-2024-29133 & CVE-2024-291
 ### Compile Dependency Updates
 
 * Updated `com.azure:azure-core:1.47.0` to `1.48.0`
-* Updated `com.azure:azure-identity:1.11.3` to `1.11.4`
+* Updated `com.azure:azure-identity:1.11.3` to `1.12.0`
 * Updated `com.azure:azure-storage-file-datalake:12.18.2` to `12.18.3`
+* Updated `com.exasol:virtual-schema-common-document-files:8.0.2` to `8.0.3`
 
 ### Test Dependency Updates
 
 * Updated `com.exasol:exasol-test-setup-abstraction-java:2.1.1` to `2.1.2`
+* Updated `com.exasol:virtual-schema-common-document-files:8.0.2` to `8.0.3`
 * Updated `nl.jqno.equalsverifier:equalsverifier:3.15.8` to `3.16.1`
 
 ### Plugin Dependency Updates
