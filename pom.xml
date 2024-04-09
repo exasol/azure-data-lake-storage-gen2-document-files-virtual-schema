@@ -43,6 +43,13 @@
             <version>12.18.3</version>
         </dependency>
         <dependency>
+            <!-- Fix CVE-2024-29025 in io.netty:netty-codec-http via azure-storage-file-datalake -->
+            <groupId>com.azure</groupId>
+            <artifactId>azure-core-http-netty</artifactId>
+            <version>1.14.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-identity</artifactId>
             <version>1.12.0</version>

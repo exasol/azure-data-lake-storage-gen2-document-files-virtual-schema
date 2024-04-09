@@ -28,6 +28,12 @@
 | [EqualsVerifier \| release normal jar][24]     | [Apache License, Version 2.0][7]  |
 | [JaCoCo :: Agent][25]                          | [Eclipse Public License 2.0][26]  |
 
+## Runtime Dependencies
+
+| Dependency                                     | License                    |
+| ---------------------------------------------- | -------------------------- |
+| [Microsoft Azure Netty HTTP Client Library][4] | [The MIT License (MIT)][5] |
+
 ## Plugin Dependencies
 
 | Dependency                                              | License                          |
