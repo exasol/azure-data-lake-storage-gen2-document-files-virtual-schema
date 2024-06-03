@@ -26,7 +26,7 @@
 | [exasol-test-setup-abstraction-java][20]       | [MIT License][21]                 |
 | [Performance Test Recorder Java][22]           | [MIT License][23]                 |
 | [EqualsVerifier \| release normal jar][24]     | [Apache License, Version 2.0][7]  |
-| [JaCoCo :: Agent][25]                          | [Eclipse Public License 2.0][26]  |
+| [JaCoCo :: Agent][25]                          | [EPL-2.0][26]                     |
 
 ## Runtime Dependencies
 
@@ -39,7 +39,7 @@
 | Dependency                                              | License                          |
 | ------------------------------------------------------- | -------------------------------- |
 | [SonarQube Scanner for Maven][27]                       | [GNU LGPL 3][28]                 |
-| [Apache Maven Toolchains Plugin][29]                    | [Apache License, Version 2.0][7] |
+| [Apache Maven Toolchains Plugin][29]                    | [Apache-2.0][7]                  |
 | [Apache Maven Compiler Plugin][30]                      | [Apache-2.0][7]                  |
 | [Apache Maven Enforcer Plugin][31]                      | [Apache-2.0][7]                  |
 | [Maven Flatten Plugin][32]                              | [Apache Software Licenese][7]    |
@@ -49,7 +49,7 @@
 | [duplicate-finder-maven-plugin Maven Mojo][37]          | [Apache License 2.0][38]         |
 | [Project Keeper Maven plugin][39]                       | [The MIT License][40]            |
 | [Apache Maven Assembly Plugin][41]                      | [Apache-2.0][7]                  |
-| [Apache Maven JAR Plugin][42]                           | [Apache License, Version 2.0][7] |
+| [Apache Maven JAR Plugin][42]                           | [Apache-2.0][7]                  |
 | [Artifact reference checker and unifier][43]            | [MIT License][44]                |
 | [Apache Maven Dependency Plugin][45]                    | [Apache-2.0][7]                  |
 | [Maven Failsafe Plugin][46]                             | [Apache-2.0][7]                  |
