@@ -23,7 +23,7 @@ import com.exasol.udfdebugging.UdfTestSetup;
 import jakarta.json.*;
 
 public class IntegrationTestSetup implements AutoCloseable {
-    private static final String ADAPTER_JAR = "document-files-virtual-schema-dist-8.0.3-azure-datalake-storage-gen2-2.0.2.jar";
+    private static final String ADAPTER_JAR = "document-files-virtual-schema-dist-8.0.4-azure-datalake-storage-gen2-2.0.3.jar";
     private final ExasolTestSetup exasolTestSetup;
     private final Connection exasolConnection;
     private final Statement exasolStatement;
