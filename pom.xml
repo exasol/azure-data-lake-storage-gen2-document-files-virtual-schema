@@ -43,22 +43,9 @@
             <version>12.19.1</version>
         </dependency>
         <dependency>
-            <!-- Fix CVE-2024-29025 in io.netty:netty-codec-http via azure-storage-file-datalake -->
-            <groupId>com.azure</groupId>
-            <artifactId>azure-core-http-netty</artifactId>
-            <version>1.15.1</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-identity</artifactId>
             <version>1.12.2</version>
-        </dependency>
-        <dependency>
-            <!-- Pin transitive dependency of com.azure:azure-identity to fix CVE-2023-52428 -->
-            <groupId>com.nimbusds</groupId>
-            <artifactId>nimbus-jose-jwt</artifactId>
-            <version>9.40</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>

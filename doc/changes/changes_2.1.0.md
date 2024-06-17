@@ -27,11 +27,11 @@ See the [EDML user guide](https://github.com/exasol/virtual-schema-common-docume
 * Updated `com.azure:azure-identity:1.12.0` to `1.12.2`
 * Updated `com.azure:azure-storage-file-datalake:12.18.3` to `12.19.1`
 * Updated `com.exasol:virtual-schema-common-document-files:8.0.4` to `8.1.0`
-* Updated `com.nimbusds:nimbus-jose-jwt:9.37.3` to `9.40`
+* Removed `com.nimbusds:nimbus-jose-jwt:9.37.3`
 
 ### Runtime Dependency Updates
 
-* Updated `com.azure:azure-core-http-netty:1.14.2` to `1.15.1`
+* Removed `com.azure:azure-core-http-netty:1.14.2`
 
 ### Test Dependency Updates
 
