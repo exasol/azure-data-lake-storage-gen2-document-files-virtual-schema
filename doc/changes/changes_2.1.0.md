@@ -10,6 +10,11 @@ This release allows configuring the mapping of column names for the automatic ma
 
 See the [EDML user guide](https://github.com/exasol/virtual-schema-common-document/blob/main/doc/user_guide/edml_user_guide.md#column-name-conversion) for details.
 
+## Security
+
+* #59: Fixed CVE-2024-35255 in `com.azure:azure-identity:jar:1.12.0:compile`
+* #60: Fixed CVE-2024-35255 in `com.microsoft.azure:msal4j:jar:1.15.0:compile`
+
 ## Features
 
 * #51: Added option to keep original column name for auto inference
