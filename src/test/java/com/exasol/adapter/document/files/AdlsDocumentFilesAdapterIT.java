@@ -16,6 +16,7 @@ import org.junit.jupiter.api.*;
 
 import com.exasol.adapter.document.files.adlstestsetup.AdlsTestSetup;
 import com.exasol.adapter.document.files.adlstestsetup.OnlineAdlsTestSetup;
+import com.exasol.bucketfs.Bucket;
 import com.exasol.bucketfs.BucketAccessException;
 import com.exasol.dbbuilder.dialects.DatabaseObjectException;
 import com.exasol.dbbuilder.dialects.exasol.ConnectionDefinition;
@@ -34,13 +35,13 @@ class AdlsDocumentFilesAdapterIT extends AbstractDocumentFilesAdapterIT {
         final ExasolTestSetup exasolTestSetup = new ExasolTestSetupFactory(
                 Path.of("cloudSetup/generated/testConfig.json")).getTestSetup();
 
-        adlsTestSetup = getAdlsTestSetup(exasolTestSetup);
+        adlsTestSetup = getAdlsTestSetup();
         // This will set up a new Azure Data Lake Storage Gen 2 test container for us
         testContainer = new TestContainer(adlsTestSetup);
         setup = new IntegrationTestSetup(exasolTestSetup, adlsTestSetup, testContainer.getDataLakeFileSystemClient());
     }
 
-    private static AdlsTestSetup getAdlsTestSetup(final ExasolTestSetup exasolTestSetup) {
+    private static AdlsTestSetup getAdlsTestSetup() {
         return new OnlineAdlsTestSetup();
     }
 
@@ -55,6 +56,11 @@ class AdlsDocumentFilesAdapterIT extends AbstractDocumentFilesAdapterIT {
     void after() {
         testContainer.empty();
         setup.dropCreatedObjects();
+    }
+
+    @Override
+    protected Bucket getBucketFSDefaultBucket() {
+        return setup.getBucket();
     }
 
     @Override
