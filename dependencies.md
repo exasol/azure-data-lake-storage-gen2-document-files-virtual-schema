@@ -15,7 +15,7 @@
 
 | Dependency                                     | License                           |
 | ---------------------------------------------- | --------------------------------- |
-| [Hamcrest][6]                                  | [BSD License 3][7]                |
+| [Hamcrest][6]                                  | [BSD-3-Clause][7]                 |
 | [Virtual Schema for document data in files][0] | [MIT License][1]                  |
 | [JUnit Jupiter Params][8]                      | [Eclipse Public License v2.0][9]  |
 | [mockito-core][10]                             | [MIT][11]                         |
@@ -57,7 +57,7 @@
 [4]: https://github.com/Azure/azure-sdk-for-java
 [5]: http://opensource.org/licenses/MIT
 [6]: http://hamcrest.org/JavaHamcrest/
-[7]: http://opensource.org/licenses/BSD-3-Clause
+[7]: https://raw.githubusercontent.com/hamcrest/JavaHamcrest/master/LICENSE
 [8]: https://junit.org/junit5/
 [9]: https://www.eclipse.org/legal/epl-v20.html
 [10]: https://github.com/mockito/mockito
