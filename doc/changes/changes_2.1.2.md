@@ -30,6 +30,7 @@ Users are recommended to upgrade to version 1.11.4Â  or 1.12.0, which fix this 
 
 ### Compile Dependency Updates
 
+* Added `com.azure:azure-core-http-netty:1.15.7`
 * Updated `com.azure:azure-core:1.50.0` to `1.54.1`
 * Updated `com.azure:azure-identity:1.13.1` to `1.14.2`
 * Updated `com.azure:azure-storage-file-datalake:12.20.0` to `12.22.0`

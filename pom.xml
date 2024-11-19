@@ -43,6 +43,12 @@
             <version>12.22.0</version>
         </dependency>
         <dependency>
+            <!-- Upgrade transitive dependency of com.azure:azure-storage-file-datalake to fix CVE-2024-47535 in io.netty:netty-common -->
+             <groupId>com.azure</groupId>
+             <artifactId>azure-core-http-netty</artifactId>
+             <version>1.15.7</version>
+        </dependency>
+        <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-identity</artifactId>
             <version>1.14.2</version>

@@ -8,6 +8,7 @@
 | [Virtual Schema for document data in files][0]                 | [MIT License][1]           |
 | [error-reporting-java][2]                                      | [MIT License][3]           |
 | [Microsoft Azure client library for File Storage Data Lake][4] | [The MIT License (MIT)][5] |
+| [Microsoft Azure Netty HTTP Client Library][4]                 | [The MIT License (MIT)][5] |
 | [Microsoft Azure client library for Identity][4]               | [The MIT License (MIT)][5] |
 | [Microsoft Azure Java Core Library][4]                         | [The MIT License (MIT)][5] |
 
