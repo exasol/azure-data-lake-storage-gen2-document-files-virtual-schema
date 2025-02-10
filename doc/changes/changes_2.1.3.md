@@ -1,12 +1,15 @@
 # Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 2.1.3, released 2025-02-10
 
-Code name:
+Code name: Fixed vulnerability CVE-2024-57699 
 
 ## Summary
 
-## Features
+This release fixes CVE-2024-57699 in transitive dependency net.minidev:json-smart:jar:2.5.0:compile used by 
+the `com.azure:azure-identity` library
 
-* ISSUE_NUMBER: description
+## Security
+
+* #70: Fixed vulnerability CVE-2024-57699 in transitive dependency net.minidev:json-smart:jar:2.5.0:compile
 
 ## Dependency Updates
 
