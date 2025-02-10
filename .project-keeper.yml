@@ -15,6 +15,7 @@ build:
     - name: ci-build.yml
       stepCustomizations:
         - action: INSERT_AFTER
+          job: matrix-build
           stepId: enable-testcontainer-reuse
           content:
             name: Configure Azure credentials
