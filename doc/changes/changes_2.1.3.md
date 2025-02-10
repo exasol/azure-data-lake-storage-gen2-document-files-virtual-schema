@@ -10,6 +10,19 @@ Code name:
 
 ## Dependency Updates
 
+### Compile Dependency Updates
+
+* Updated `com.azure:azure-core-http-netty:1.15.7` to `1.15.8`
+* Updated `com.azure:azure-core:1.54.1` to `1.55.0`
+* Updated `com.azure:azure-identity:1.14.2` to `1.15.1`
+
+### Test Dependency Updates
+
+* Updated `com.exasol:udf-debugging-java:0.6.13` to `0.6.14`
+* Updated `nl.jqno.equalsverifier:equalsverifier:3.17.3` to `3.19`
+* Updated `org.junit.jupiter:junit-jupiter-params:5.11.3` to `5.11.4`
+* Updated `org.mockito:mockito-core:5.14.2` to `5.15.2`
+
 ### Plugin Dependency Updates
 
 * Updated `com.exasol:project-keeper-maven-plugin:4.4.0` to `4.5.0`
