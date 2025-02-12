@@ -67,11 +67,6 @@ jobs:
         id: enable-testcontainer-reuse,
         run: echo 'testcontainers.reuse.enable=true' > "$HOME/.testcontainers.properties"
       }
-      - {
-        name: Fix VM Crash in UDFs,
-        id: fix-vm-crash,
-        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
-      }
       - name: Configure Azure credentials
         id: configure-azure-credentials
         run: |

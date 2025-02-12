@@ -25,10 +25,3 @@ build:
             env:
               ACCOUNTKEY: ${{ secrets.ACCOUNTKEY }}
               ACCOUNTNAME: ${{ secrets.ACCOUNTNAME }}
-        - action: INSERT_AFTER
-          job: matrix-build
-          stepId: enable-testcontainer-reuse
-          content:
-            name: Fix VM Crash in UDFs
-            id: fix-vm-crash
-            run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
