@@ -59,7 +59,7 @@
             <artifactId>azure-identity</artifactId>
             <version>1.15.1</version>
         </dependency>
-        <!-- Transitive dependency override for CVE-2025-53864 (CWE-674) in dependency `com.nimbusds:nimbus-jose-jwt:jar:9.40:compile` -->
+        <!-- Transitive dependency override for CVE-2025-53864 (CWE-674) in dependency`com.nimbusds:nimbus-jose-jwt:jar:9.40:compile'`,transitive dependency of com.azure:azure-identity:jar:1.15.1:compile-->
         <dependency>
         <groupId>com.nimbusds</groupId>
         <artifactId>nimbus-jose-jwt</artifactId>
