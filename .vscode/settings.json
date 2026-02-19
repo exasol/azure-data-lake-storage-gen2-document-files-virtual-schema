@@ -22,5 +22,8 @@
     "connectionId": "exasol",
     "projectKey": "com.exasol:azure-data-lake-storage-gen2-document-files-virtual-schema"
   },
-  "java.configuration.updateBuildConfiguration": "automatic"
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "files.watcherExclude": {
+    "**/target": true
+  }
 }
