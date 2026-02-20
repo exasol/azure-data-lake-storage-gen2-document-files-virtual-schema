@@ -40,7 +40,7 @@
 | [Apache Maven Toolchains Plugin][33]                    | [Apache-2.0][7]                             |
 | [Apache Maven Compiler Plugin][34]                      | [Apache-2.0][7]                             |
 | [Apache Maven Enforcer Plugin][35]                      | [Apache-2.0][7]                             |
-| [Maven Flatten Plugin][36]                              | [Apache Software Licenese][7]               |
+| [Maven Flatten Plugin][36]                              | [Apache Software License][7]                |
 | [org.sonatype.ossindex.maven:ossindex-maven-plugin][37] | [ASL2][38]                                  |
 | [Maven Surefire Plugin][39]                             | [Apache-2.0][7]                             |
 | [Versions Maven Plugin][40]                             | [Apache License, Version 2.0][7]            |
@@ -88,7 +88,7 @@
 [28]: https://maven.apache.org/plugins/maven-install-plugin/
 [29]: https://maven.apache.org/plugins/maven-resources-plugin/
 [30]: https://maven.apache.org/plugins/maven-site-plugin/
-[31]: http://docs.sonarqube.org/display/PLUG/Plugin+Library/sonar-scanner-maven/sonar-maven-plugin
+[31]: https://docs.sonarsource.com/sonarqube-server/latest/extension-guide/developing-a-plugin/plugin-basics/sonar-scanner-maven/sonar-maven-plugin/
 [32]: http://www.gnu.org/licenses/lgpl.txt
 [33]: https://maven.apache.org/plugins/maven-toolchains-plugin/
 [34]: https://maven.apache.org/plugins/maven-compiler-plugin/
