@@ -12,6 +12,8 @@ import com.exasol.adapter.document.files.connection.AdlsConnectionProperties;
 import com.exasol.adapter.document.files.stringfilter.StringFilter;
 import com.exasol.adapter.document.iterators.*;
 
+import java.util.Collections;
+
 
 /**
  * File finder for files on Azure Data Lake Storage Gen 2.
@@ -53,7 +55,7 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
         final com.exasol.adapter.document.files.stringfilter.matcher.Matcher filePatternMatcher = this.filePattern
                 .getDirectoryIgnoringMatcher();
         final FilteringIterator<AdlsObjectDescription> filteredObjectKeys = new FilteringIterator<>(objectKeys,
-                s3Object -> filePatternMatcher.matches(s3Object.getName()));
+                adlsObject -> filePatternMatcher.matches(adlsObject.getName()));
         //load all the files
         final ExecutorServiceFactory executorServiceFactory = new ExecutorServiceFactory();
         final CloseableIterator<RemoteFile> loadedFiles = new TransformingIterator<>(filteredObjectKeys,
@@ -72,13 +74,28 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
      * @return partially filtered list of object keys
      */
     private CloseableIterator<AdlsObjectDescription> getQuickFilteredObjectKeys() {
-        ListPathsOptions options = new ListPathsOptions()
+        // Extract the deepest directory from the static prefix (everything before the last '/') so that ADLS only lists
+        // the relevant subtree instead of scanning the entire container.
+        final String staticPrefix = this.filePattern.getStaticPrefix();
+        final String path = staticPrefix.contains("/")
+                ? staticPrefix.substring(0, staticPrefix.lastIndexOf('/'))
+                : "";
+
+        // If the derived path does not exist in the container — no files can match the pattern.
+        // An empty path refers to the container root, which always exists, so we only
+        // check non-empty prefixes.
+        if (!path.isEmpty() && !this.dlFileSystemClient.getDirectoryClient(path).exists()) {
+            return new CloseableIteratorWrapper<>(Collections.emptyIterator());
+        }
+
+        final ListPathsOptions options = new ListPathsOptions()
                 .setRecursive(true)
-                .setPath(""); // can't filter on this, this has to be an actual path, not a wildcard
+                .setPath(path); // requires an actual path, not a wildcard
 
         final CloseableIterator<PathItem> files = new CloseableIteratorWrapper<>(
                 this.dlFileSystemClient.listPaths(options, null).iterator()
         );
+
         return new TransformingIterator<>(files, file -> new AdlsObjectDescription(file.getName(), file.getContentLength()));
     }
 
