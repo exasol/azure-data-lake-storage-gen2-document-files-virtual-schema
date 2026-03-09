@@ -92,9 +92,11 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
                 .setRecursive(true)
                 .setPath(path); // requires an actual path, not a wildcard
 
-        final CloseableIterator<PathItem> files = new CloseableIteratorWrapper<>(
+        final CloseableIterator<PathItem> paths = new CloseableIteratorWrapper<>(
                 this.dlFileSystemClient.listPaths(options, null).iterator()
         );
+
+        final FilteringIterator<PathItem> files = new FilteringIterator<>(paths, item -> !item.isDirectory());
 
         return new TransformingIterator<>(files, file -> new AdlsObjectDescription(file.getName(), file.getContentLength()));
     }
