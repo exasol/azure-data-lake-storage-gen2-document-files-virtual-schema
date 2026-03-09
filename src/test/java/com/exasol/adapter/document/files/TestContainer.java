@@ -23,7 +23,7 @@ public class TestContainer implements AutoCloseable {
         for (final PathItem path : dataLakeFileSystemClient.listPaths()) {
             if (path.isDirectory()) {
                 DataLakeDirectoryClient dlDirectoryClient = dataLakeFileSystemClient.getDirectoryClient((path.getName()));
-                dlDirectoryClient.deleteWithResponse(true, null, null, null);
+                dlDirectoryClient.deleteRecursively();
             } else {
                 DataLakeFileClient dlFileClient = dataLakeFileSystemClient.getFileClient((path.getName()));
                 dlFileClient.delete();
@@ -33,7 +33,6 @@ public class TestContainer implements AutoCloseable {
 
     @Override
     public void close() {
-        empty();
         this.dataLakeFileSystemClient.delete();
     }
 
