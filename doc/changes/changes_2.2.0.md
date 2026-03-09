@@ -32,7 +32,6 @@ Code name:
 * Added `org.jacoco:org.jacoco.agent:0.8.14`
 * Added `org.junit.jupiter:junit-jupiter-params:5.11.4`
 * Added `org.mockito:mockito-core:5.15.2`
-* Added `org.slf4j:slf4j-jdk14:1.7.36`
 
 ### Plugin Dependency Updates
 
