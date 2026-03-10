@@ -18,7 +18,7 @@
 | [Hamcrest][6]                                  | [BSD-3-Clause][7]                 |
 | [Virtual Schema for document data in files][0] | [MIT License][1]                  |
 | [JUnit Jupiter Params][8]                      | [Eclipse Public License v2.0][9]  |
-| [mockito-core][10]                             | [MIT][11]                         |
+| [mockito-junit-jupiter][10]                    | [MIT][11]                         |
 | [Test Database Builder for Java][12]           | [MIT License][13]                 |
 | [udf-debugging-java][14]                       | [MIT License][15]                 |
 | [Matcher for SQL Result Sets][16]              | [MIT License][17]                 |

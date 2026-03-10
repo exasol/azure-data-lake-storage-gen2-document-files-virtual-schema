@@ -12,6 +12,8 @@ import com.exasol.adapter.document.files.connection.AdlsConnectionProperties;
 import com.exasol.adapter.document.files.stringfilter.StringFilter;
 import com.exasol.adapter.document.iterators.*;
 
+import static java.util.Objects.requireNonNull;
+
 import java.util.Collections;
 
 
@@ -30,16 +32,17 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
      */
     //the c'tor sets up a Data Lake Storage Container/File System client and saves the file pattern for internal operations.
     public AdlsRemoteFileFinder(final StringFilter filePattern, final AdlsConnectionProperties connectionProperties) {
-        //"storage" in GCP
-        final DataLakeServiceClient datalakeServiceClient = buildAdlsClient(connectionProperties);
-        //"container" is the equivalent to the "bucket" in GCP
-        this.dlFileSystemClient = datalakeServiceClient.getFileSystemClient(connectionProperties.getAdlsContainerName());
-        this.filePattern = filePattern;
+        this(filePattern, buildAdlsClient(connectionProperties).getFileSystemClient(connectionProperties.getAdlsContainerName()));
     }
 
-    private DataLakeServiceClient buildAdlsClient(final AdlsConnectionProperties connectionProperties) {
-        StorageSharedKeyCredential sharedKeyCredential =
-                new StorageSharedKeyCredential(connectionProperties.getAdlsStorageAccountName(), connectionProperties.getAdlsStorageAccountKey());
+    AdlsRemoteFileFinder(final StringFilter filePattern, final DataLakeFileSystemClient dlFileSystemClient) {
+        this.filePattern = requireNonNull(filePattern, "filePattern must not be null");
+        this.dlFileSystemClient = requireNonNull(dlFileSystemClient, "dlFileSystemClient must not be null");
+    }
+
+    private static DataLakeServiceClient buildAdlsClient(final AdlsConnectionProperties connectionProperties) {
+        StorageSharedKeyCredential sharedKeyCredential = new StorageSharedKeyCredential(connectionProperties.getAdlsStorageAccountName(),
+                connectionProperties.getAdlsStorageAccountKey());
         var builder = new DataLakeServiceClientBuilder();
         builder.credential(sharedKeyCredential);
         builder.endpoint("https://" + connectionProperties.getAdlsStorageAccountName() + ".dfs.core.windows.net");
