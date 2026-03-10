@@ -84,7 +84,7 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
         // If the derived path does not exist in the container — no files can match the pattern.
         // An empty path refers to the container root, which always exists, so we only
         // check non-empty prefixes.
-        if (!path.isEmpty() && !this.dlFileSystemClient.getDirectoryClient(path).exists()) {
+        if (!path.isEmpty() && !directoryExists(path)) {
             return new CloseableIteratorWrapper<>(Collections.emptyIterator());
         }
 
@@ -99,6 +99,11 @@ public class AdlsRemoteFileFinder implements RemoteFileFinder {
         final FilteringIterator<PathItem> files = new FilteringIterator<>(paths, item -> !item.isDirectory());
 
         return new TransformingIterator<>(files, file -> new AdlsObjectDescription(file.getName(), file.getContentLength()));
+    }
+
+    private boolean directoryExists(final String path) {
+        final Boolean exists = this.dlFileSystemClient.getDirectoryClient(path).exists();
+        return exists != null && exists.booleanValue();
     }
 
     private RemoteFile loadFile(final AdlsObjectDescription fileDescription,
