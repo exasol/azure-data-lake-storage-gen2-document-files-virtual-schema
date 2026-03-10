@@ -27,3 +27,4 @@ Code name:
 * Updated `nl.jqno.equalsverifier:equalsverifier:3.19` to `3.19.4`
 * Updated `org.junit.jupiter:junit-jupiter-params:5.11.4` to `5.14.1`
 * Updated `org.mockito:mockito-core:5.15.2` to `5.22.0`
+* Added `org.slf4j:slf4j-jdk14:1.7.36`
