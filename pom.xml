@@ -26,18 +26,6 @@
             </properties>
         </profile>
     </profiles>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <!-- Fix vulnerabilities CVE-2025-25193 ,CVE-2025-24970 and CVE-2025-55163-->
-                <groupId>io.netty</groupId>
-                <artifactId>netty-bom</artifactId>
-                <version>4.1.131.Final</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>com.exasol</groupId>
@@ -47,28 +35,22 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>error-reporting-java</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-storage-file-datalake</artifactId>
-            <version>12.22.0</version>
+            <version>12.26.2</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-identity</artifactId>
-            <version>1.15.1</version>
-        </dependency>
-        <!-- Transitive dependency override for CVE-2025-53864 (CWE-674) in dependency`com.nimbusds:nimbus-jose-jwt:jar:9.40:compile'`,transitive dependency of com.azure:azure-identity:jar:1.15.1:compile-->
-        <dependency>
-            <groupId>com.nimbusds</groupId>
-            <artifactId>nimbus-jose-jwt</artifactId>
-            <version>10.0.2</version>
+            <version>1.18.2</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-core</artifactId>
-            <version>1.55.0</version>
+            <version>1.57.1</version>
         </dependency>
         <!-- Test dependencies -->
         <dependency>
@@ -87,32 +69,33 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.11.4</version>
+            <!-- JUnit 6 requires Java 17 -->
+            <version>5.14.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>5.15.2</version>
+            <version>5.22.0</version>
             <scope>test</scope>
         </dependency>
         <!--Integration test dependencies-->
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>test-db-builder-java</artifactId>
-            <version>3.6.0</version>
+            <version>3.6.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>udf-debugging-java</artifactId>
-            <version>0.6.17</version>
+            <version>0.6.18</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>hamcrest-resultset-matcher</artifactId>
-            <version>1.7.0</version>
+            <version>1.7.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -124,13 +107,14 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>performance-test-recorder-java</artifactId>
-            <version>0.1.4</version>
+            <version>0.1.5</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <version>3.19</version>
+            <!-- Equalsverifier 4 requires Java 17 -->
+            <version>3.19.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -153,10 +137,6 @@
                     <excludeVulnerabilityIds>
                         <!-- Transitive test dependency xerces:xercesImpl:jar:2.12.2. We assume that we only connect to the known endpoint ExaOperations.-->
                         <exclude>CVE-2017-10355</exclude>
-                        <!-- com.exasol:exasol-jdbc:jar:24.2.1:test -->
-                        <exclude>CVE-2024-55551</exclude>
-                        <!--io.projectreactor.netty:reactor-netty-http:1.0.48:compile-->
-                        <exclude>CVE-2025-22227</exclude>
                         <!--io.airlift:aircompressor:2.0.2:compile-->
                         <exclude>CVE-2025-67721</exclude>
                     </excludeVulnerabilityIds>
