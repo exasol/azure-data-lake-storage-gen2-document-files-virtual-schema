@@ -70,7 +70,7 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <!-- JUnit 6 requires Java 17 -->
-            <version>6.0.3</version>
+            <version>5.14.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -114,7 +114,7 @@
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
             <!-- Equalsverifier 4 requires Java 17 -->
-            <version>4.4.1</version>
+            <version>3.19.4</version>
             <scope>test</scope>
         </dependency>
         <!-- Enable log output for testcontainer startup -->
