@@ -26,6 +26,18 @@
             </properties>
         </profile>
     </profiles>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Fix CVE-2026-33870 & CVE-2026-33871 -->
+                <groupId>io.netty</groupId>
+                <artifactId>netty-bom</artifactId>
+                <version>4.2.12.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>com.exasol</groupId>
