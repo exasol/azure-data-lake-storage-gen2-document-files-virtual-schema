@@ -1,4 +1,4 @@
-# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 2.2.1, released 2026-03-31
+# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 2.2.1, released 2026-04-01
 
 Code name: Fixed vulnerabilities CVE-2026-33871, CVE-2026-33870
 
