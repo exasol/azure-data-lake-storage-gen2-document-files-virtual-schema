@@ -35,4 +35,3 @@ netty-codec-http - Inconsistent Interpretation of HTTP Requests ('HTTP Request/R
 
 * Updated `org.junit.jupiter:junit-jupiter-params:5.14.1` to `5.14.3`
 * Updated `org.mockito:mockito-junit-jupiter:5.22.0` to `5.23.0`
-* Updated `org.slf4j:slf4j-jdk14:1.7.36` to `2.0.17`

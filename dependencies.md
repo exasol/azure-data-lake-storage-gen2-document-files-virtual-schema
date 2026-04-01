@@ -25,7 +25,7 @@
 | [exasol-test-setup-abstraction-java][18]       | [MIT License][19]                 |
 | [Performance Test Recorder Java][20]           | [MIT License][21]                 |
 | [EqualsVerifier \| release normal jar][22]     | [Apache License, Version 2.0][23] |
-| [SLF4J JDK14 Provider][24]                     | [MIT][25]                         |
+| [SLF4J JDK14 Binding][24]                      | [MIT License][25]                 |
 | [JaCoCo :: Agent][26]                          | [EPL-2.0][27]                     |
 
 ## Plugin Dependencies
@@ -82,7 +82,7 @@
 [22]: https://www.jqno.nl/equalsverifier
 [23]: https://www.apache.org/licenses/LICENSE-2.0.txt
 [24]: http://www.slf4j.org
-[25]: https://opensource.org/license/mit
+[25]: http://www.opensource.org/licenses/mit-license.php
 [26]: https://www.eclemma.org/jacoco/index.html
 [27]: https://www.eclipse.org/legal/epl-2.0/
 [28]: https://maven.apache.org/plugins/maven-clean-plugin/
