@@ -1,7 +1,6 @@
 package com.exasol.adapter.document.files;
 
-import com.exasol.adapter.AdapterFactory;
-import com.exasol.adapter.VirtualSchemaAdapter;
+import com.exasol.adapter.*;
 import com.exasol.adapter.document.DocumentAdapter;
 import com.exasol.logging.VersionCollector;
 
@@ -19,7 +18,7 @@ public class AdlsDocumentFilesAdapterFactory implements AdapterFactory {
     public static final String ADAPTER_NAME = "AZURE_DATA_LAKE_STORAGE_GEN2_DOCUMENT_FILES";
 
     @Override
-    public VirtualSchemaAdapter createAdapter() {
+    public VirtualSchemaAdapter createAdapter(final AdapterContext context) {
         return new DocumentAdapter(new DocumentFilesAdapter(ADAPTER_NAME, new AdlsFileFinderFactory()));
     }
 
@@ -33,5 +32,10 @@ public class AdlsDocumentFilesAdapterFactory implements AdapterFactory {
     @Override
     public String getAdapterName() {
         return ADAPTER_NAME;
+    }
+
+    @Override
+    public String getAdapterProjectShortTag() {
+        return "VSADLG2";
     }
 }
