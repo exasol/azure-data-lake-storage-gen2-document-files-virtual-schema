@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>azure-data-lake-storage-gen2-document-files-virtual-schema</artifactId>
-    <version>2.2.2</version>
+    <version>3.0.0</version>
     <name>Virtual Schema for document data in files on Azure Data Lake Storage Gen 2</name>
     <description>Adapter for document data access from files from Azure Data Lake Storage Gen 2.</description>
     <url>https://github.com/exasol/azure-data-lake-storage-gen2-document-files-virtual-schema/</url>
@@ -82,7 +82,7 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <!-- JUnit 6 requires Java 17 -->
-            <version>6.0.3</version>
+            <version>5.14.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -126,7 +126,7 @@
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
             <!-- Equalsverifier 4 requires Java 17 -->
-            <version>4.5</version>
+            <version>3.19.4</version>
             <scope>test</scope>
         </dependency>
         <!-- Enable log output for testcontainer startup -->
@@ -134,7 +134,7 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-jdk14</artifactId>
             <!-- com.azure:azure-core has a transitive dependency on org.slf4j:slf4j-api:jar:1.7.36, so we can't use version 2 here. -->
-            <version>2.0.17</version>
+            <version>1.7.36</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -189,7 +189,7 @@
             <plugin>
                 <groupId>com.exasol</groupId>
                 <artifactId>project-keeper-maven-plugin</artifactId>
-                <version>5.6.1</version>
+                <version>5.6.2</version>
                 <executions>
                     <execution>
                         <goals>
@@ -210,7 +210,7 @@
     <parent>
         <artifactId>azure-data-lake-storage-gen2-document-files-virtual-schema-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>2.2.2</version>
+        <version>3.0.0</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
 </project>
