@@ -30,10 +30,12 @@ io.netty:netty-codec-http - CRLF Injection
 * Updated `com.azure:azure-core:1.57.1` to `1.58.0`
 * Updated `com.azure:azure-identity:1.18.2` to `1.18.3`
 * Updated `com.azure:azure-storage-file-datalake:12.26.2` to `12.26.4`
+* Updated `com.exasol:virtual-schema-common-document-files:8.1.14` to `9.0.0`
 
 ### Test Dependency Updates
 
 * Updated `com.exasol:test-db-builder-java:3.6.4` to `4.0.0`
+* Updated `com.exasol:virtual-schema-common-document-files:8.1.14` to `9.0.0`
 * Updated `org.junit.jupiter:junit-jupiter-params:5.14.3` to `5.14.4`
 
 ### Plugin Dependency Updates
