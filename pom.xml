@@ -36,6 +36,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- Upgrading transitive dependency of com.azure:azure-storage-file-datalake:jar:12.26.4:compile to fix CVE-2026-41715 -->
             <dependency>
                 <groupId>io.projectreactor.netty</groupId>
                 <artifactId>reactor-netty-http</artifactId>
