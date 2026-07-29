@@ -42,32 +42,13 @@
                 <artifactId>reactor-netty-http</artifactId>
                 <version>1.2.18</version>
             </dependency>
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-core:jar:2.18.6:compile of com.azure:azure-core:jar:1.58.0:compile to fix GHSA-r7wm-3cxj-wff9 -->
+            <!-- Aligning all transitive Jackson dependencies of com.azure:azure-core:jar:1.58.0:compile to fix GHSA-r7wm-3cxj-wff9 and CVE-2026-54512 through CVE-2026-54518, CVE-2026-59888, and CVE-2026-59889 -->
             <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>2.18.8</version>
-            </dependency>
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.6:compile of com.azure:azure-core:jar:1.58.0:compile to fix CVE-2026-59888 -->
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.6:compile of com.azure:azure-core:jar:1.58.0:compile to fix CVE-2026-59889 -->
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.6:compile of com.azure:azure-core:jar:1.58.0:compile to fix CVE-2026-54515 -->
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.6:compile of com.azure:azure-core:jar:1.58.0:compile to fix CVE-2026-54514 -->
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.6:compile of com.azure:azure-core:jar:1.58.0:compile to fix CVE-2026-54512 -->
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.6:compile of com.azure:azure-core:jar:1.58.0:compile to fix GHSA-mhm7-754m-9p8w -->
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.6:compile of com.azure:azure-core:jar:1.58.0:compile to fix CVE-2026-54513 -->
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.8:compile of com.azure:azure-core:jar:1.58.0:compile to fix CVE-2026-54515 -->
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.8:compile of com.azure:azure-core:jar:1.58.0:compile to fix CVE-2026-54518 -->
-            <!-- Upgrading transitive dependency com.fasterxml.jackson.core:jackson-databind:jar:2.18.8:compile of com.azure:azure-core:jar:1.58.0:compile to fix CVE-2026-59889 -->            
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
                 <version>2.22.1</version>
-            </dependency>
-            <!-- Upgrading transitive dependency software.amazon.awscdk:aws-cdk-lib:jar:2.167.1:compile to fix GHSA-464c-974j-9xm6 -->
-            <dependency>
-                <groupId>software.amazon.awscdk</groupId>
-                <artifactId>aws-cdk-lib</artifactId>
-                <version>2.253.0</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
