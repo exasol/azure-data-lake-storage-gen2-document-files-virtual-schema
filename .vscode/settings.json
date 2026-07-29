@@ -10,8 +10,7 @@
   "java.sources.organizeImports.staticStarThreshold": 3,
   "java.test.config": {
     "vmArgs": [
-      "-Djava.util.logging.config.file=src/test/resources/logging.properties",
-      "-Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl"
+      "-Djava.util.logging.config.file=src/test/resources/logging.properties"
     ]
   },
   "[json]": {
