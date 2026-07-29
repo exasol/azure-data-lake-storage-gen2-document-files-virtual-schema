@@ -7,7 +7,7 @@
     <description>Adapter for document data access from files from Azure Data Lake Storage Gen 2.</description>
     <url>https://github.com/exasol/azure-data-lake-storage-gen2-document-files-virtual-schema/</url>
     <properties>
-        <vs-common-document-files.version>9.0.0</vs-common-document-files.version>
+        <vs-common-document-files.version>9.0.2</vs-common-document-files.version>
     </properties>
     <profiles>
         <profile>
@@ -40,7 +40,7 @@
             <dependency>
                 <groupId>io.projectreactor.netty</groupId>
                 <artifactId>reactor-netty-http</artifactId>
-                <version>1.2.18</version>
+                <version>1.3.6</version>
             </dependency>
             <!-- Aligning all transitive Jackson dependencies of com.azure:azure-core:jar:1.58.0:compile to fix GHSA-r7wm-3cxj-wff9 and CVE-2026-54512 through CVE-2026-54518, CVE-2026-59888, and CVE-2026-59889 -->
             <dependency>
@@ -66,17 +66,17 @@
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-storage-file-datalake</artifactId>
-            <version>12.26.4</version>
+            <version>12.28.0</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-identity</artifactId>
-            <version>1.18.3</version>
+            <version>1.18.4</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-core</artifactId>
-            <version>1.58.0</version>
+            <version>1.58.1</version>
         </dependency>
         <!-- Test dependencies -->
         <dependency>
@@ -109,7 +109,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>test-db-builder-java</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -121,19 +121,19 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>hamcrest-resultset-matcher</artifactId>
-            <version>1.7.2</version>
+            <version>1.7.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-test-setup-abstraction-java</artifactId>
-            <version>2.1.11</version>
+            <version>3.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>performance-test-recorder-java</artifactId>
-            <version>0.1.5</version>
+            <version>0.1.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -165,19 +165,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.sonatype.ossindex.maven</groupId>
-                <artifactId>ossindex-maven-plugin</artifactId>
-                <configuration>
-
-                    <excludeVulnerabilityIds>
-                        <!-- Transitive test dependency xerces:xercesImpl:jar:2.12.2. We assume that we only connect to the known endpoint ExaOperations.-->
-                        <exclude>CVE-2017-10355</exclude>
-                        <!-- OSS Index exclusion for CVE-2017-7503 in xerces:xercesImpl; no CVE-free upgrade was found after trying no downloadable newer version -->
-                        <exclude>CVE-2017-7503</exclude>
-                    </excludeVulnerabilityIds>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.basepom.maven</groupId>
                 <artifactId>duplicate-finder-maven-plugin</artifactId>
                 <configuration>
@@ -192,13 +179,6 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <configuration>
                     <useModulePath>false</useModulePath>
-                    <systemPropertyVariables>
-                        <!-- Avoid exception running integration tests caused by wrong XML parser (xerces:xercesImpl) beeing loaded:
-                            java.lang.IllegalArgumentException: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
-                            at org.apache.xerces.jaxp.DocumentBuilderFactoryImpl.setAttribute(Unknown Source)
-                            We can't exclude xerces:xercesImpl because it's required for performance tests, so we explicitly select the correct parser here. -->
-                        <javax.xml.parsers.DocumentBuilderFactory>com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl</javax.xml.parsers.DocumentBuilderFactory>
-                    </systemPropertyVariables>
                 </configuration>
             </plugin>
             <plugin>

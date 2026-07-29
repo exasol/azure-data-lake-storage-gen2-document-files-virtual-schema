@@ -251,9 +251,21 @@ It was found that the Red Hat JBoss EAP 7.0.5 implementation of javax.xml.transf
 * #117: Fixed vulnerability CVE-2017-7503 in dependency `xerces:xercesImpl:jar:2.12.2:compile`
 ## Dependency Updates
 
+### Compile Dependency Updates
+
+* Updated `com.azure:azure-core:1.58.0` to `1.58.1`
+* Updated `com.azure:azure-identity:1.18.3` to `1.18.4`
+* Updated `com.azure:azure-storage-file-datalake:12.26.4` to `12.28.0`
+* Updated `com.exasol:virtual-schema-common-document-files:9.0.0` to `9.0.2`
+
 ### Test Dependency Updates
 
+* Updated `com.exasol:exasol-test-setup-abstraction-java:2.1.11` to `3.0.0`
+* Updated `com.exasol:hamcrest-resultset-matcher:1.7.2` to `1.7.3`
+* Updated `com.exasol:performance-test-recorder-java:0.1.5` to `0.1.6`
+* Updated `com.exasol:test-db-builder-java:4.0.0` to `4.0.2`
 * Updated `com.exasol:udf-debugging-java:0.6.18` to `0.6.20`
+* Updated `com.exasol:virtual-schema-common-document-files:9.0.0` to `9.0.2`
 * Updated `org.jacoco:org.jacoco.agent:0.8.14` to `0.8.15`
 
 ### Plugin Dependency Updates
