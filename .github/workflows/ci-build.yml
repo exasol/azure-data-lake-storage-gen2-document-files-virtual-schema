@@ -33,13 +33,12 @@ jobs:
       fail-fast: false
       matrix:
         exasol_db_version: [
-          2026.1.0,
-          2025.1.13,
-          8.29.13
+          2026.1.2,
+          2025.1.16
         ]
         
     env: {
-      DEFAULT_EXASOL_DB_VERSION: 2026.1.0
+      DEFAULT_EXASOL_DB_VERSION: 2026.1.2
     }
     steps:
       - name: Free Disk Space
@@ -61,7 +60,7 @@ jobs:
         with:
           distribution: temurin
           java-version: |-
-            11
+            17
             21
           cache: maven
       - {
@@ -200,18 +199,18 @@ jobs:
           fetch-depth: 0,
           persist-credentials: false
         }
-      - name: Set up JDK 17
+      - name: Set up JDK 21
         id: setup-java
         uses: actions/setup-java@v6
         with: {
           distribution: temurin,
-          java-version: '17',
+          java-version: '21',
           cache: maven
         }
-      - name: Run tests and build with Maven 17
+      - name: Run tests and build with Maven 21
         id: build-next-java
         run: |
-          ./mvnw --batch-mode clean package -DtrimStackTrace=false -Djava.version=17 \
+          ./mvnw --batch-mode clean package -DtrimStackTrace=false -Djava.version=21 \
               --no-transfer-progress \
               -DossindexSkip=true
   ossindex:
@@ -240,7 +239,7 @@ jobs:
         with:
           distribution: temurin
           java-version: |-
-            11
+            17
             21
           cache: maven
           server-id: ossindex
@@ -316,7 +315,7 @@ jobs:
         with:
           distribution: temurin
           java-version: |-
-            11
+            17
             21
           cache: maven
       - name: Check if release is needed
