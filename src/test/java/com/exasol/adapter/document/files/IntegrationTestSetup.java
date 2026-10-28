@@ -36,6 +36,7 @@ public class IntegrationTestSetup implements AutoCloseable {
     private final UdfTestSetup udfTestSetup;
     private final ConnectionDefinition connectionDefinition;
 
+    @SuppressWarnings("this-escape") // Acceptable in tests
     public IntegrationTestSetup(final ExasolTestSetup exasolTestSetup, final AdlsTestSetup adlsTestSetup,
             final DataLakeFileSystemClient adlsContainer)
             throws SQLException, BucketAccessException, TimeoutException, FileNotFoundException {
