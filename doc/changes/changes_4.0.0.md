@@ -6,9 +6,69 @@ Code name: Dependency Security Updates
 
 This release fixes reported vulnerabilities in runtime and test dependencies.
 
-## Features
-
-* ISSUE_NUMBER: description
+* Fixes #146
+* Fixes #148
+* Fixes #149
+* Fixes #152
+* Fixes #153
+* Fixes #154
+* Fixes #155
+* Fixes #156
+* Fixes #157
+* Fixes #158
+* Fixes #160
+* Fixes #161
+* Fixes #162
+* Fixes #164
+* Fixes #165
+* Fixes #166
+* Fixes #167
+* Fixes #168
+* Fixes #169
+* Fixes #170
+* Fixes #171
+* Fixes #173
+* Fixes #174
+* Fixes #175
+* Fixes #176
+* Fixes #177
+* Fixes #182
+* Fixes #183
+* Fixes #184
+* Fixes #185
+* Fixes #186
+* Fixes #187
+* Fixes #188
+* Fixes #189
+* Fixes #190
+* Fixes #191
+* Fixes #192
+* Fixes #193
+* Fixes #194
+* Fixes #195
+* Fixes #196
+* Fixes #197
+* Fixes #198
+* Fixes #199
+* Fixes #200
+* Fixes #201
+* Fixes #202
+* Fixes #203
+* Fixes #204
+* Fixes #205
+* Fixes #206
+* Fixes #208
+* Fixes #210
+* Fixes #211
+* Fixes #213
+* Fixes #214
+* Fixes #215
+* Fixes #216
+* Fixes #217
+* Fixes #218
+* Fixes #219
+* Fixes #220
+* Fixes #222
 
 ## Dependency Updates
 
