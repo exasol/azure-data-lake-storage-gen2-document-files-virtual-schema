@@ -75,6 +75,7 @@ This release fixes reported vulnerabilities in runtime and test dependencies.
 * #190: Fixed CVE-2026-93573 (interpretation conflict) in `io.netty:netty-codec-http:4.2.16.Final`
 * #182: Fixed CVE-2026-100666 (HTTP request smuggling) in `io.netty:netty-codec-http:4.2.16.Final`
 * #167: Fixed CVE-2026-86231 (certificate expiration validation) in `com.github.mwiede:jsch:2.28.4`
+
 ## Dependency Updates
 
 ### Compile Dependency Updates
