@@ -51,6 +51,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <!-- Upgrade transitive dependency io.projectreactor:reactor-core:jar:3.7.19 of com.azure:azure-core to fix CVE-2026-47857 and CVE-2026-47863 -->
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-bom</artifactId>
+                <version>2025.0.8</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
