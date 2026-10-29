@@ -1,4 +1,4 @@
-# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 4.0.0, released 2026-10-28
+# Virtual Schema for Document Data in Files on Azure Data Lake Storage Gen 2 4.0.0, released 2026-10-29
 
 Code name: Dependency Security Updates
 
