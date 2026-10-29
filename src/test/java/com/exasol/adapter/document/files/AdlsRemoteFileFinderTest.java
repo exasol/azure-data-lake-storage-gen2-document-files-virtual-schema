@@ -47,7 +47,11 @@ class AdlsRemoteFileFinderTest {
         final IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new AdlsRemoteFileFinder(filter, connectionInformation));
         assertThat(exception.getMessage(),
-                containsString("Illegal character in authority"));
+                anyOf(
+                        // Java 17
+                        equalTo("Illegal character in authority at index 8: https://{ invalid JSON.blob.core.windows.net"),
+                        // Java 21
+                        equalTo("The Azure Storage endpoint url is malformed.")));
     }
 
     @ParameterizedTest
