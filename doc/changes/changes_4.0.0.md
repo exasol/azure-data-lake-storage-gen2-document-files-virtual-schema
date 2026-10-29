@@ -95,7 +95,6 @@ This release fixes reported vulnerabilities in runtime and test dependencies.
 * Removed `org.junit.jupiter:junit-jupiter-params:5.14.4`
 * Added `org.junit.jupiter:junit-jupiter:6.1.3`
 * Updated `org.mockito:mockito-junit-jupiter:5.23.0` to `5.24.0`
-* Updated `org.slf4j:slf4j-jdk14:1.7.36` to `2.0.20`
 
 ### Plugin Dependency Updates
 
