@@ -23,7 +23,7 @@ import com.exasol.udfdebugging.UdfTestSetup;
 import jakarta.json.*;
 
 public class IntegrationTestSetup implements AutoCloseable {
-    private static final String ADAPTER_JAR = "document-files-virtual-schema-dist-9.1.0-azure-datalake-storage-gen2-3.1.0.jar";
+    private static final String ADAPTER_JAR = "document-files-virtual-schema-dist-10.0.1-azure-datalake-storage-gen2-4.0.0.jar";
     private final ExasolTestSetup exasolTestSetup;
     private final Connection exasolConnection;
     private final Statement exasolStatement;
@@ -36,6 +36,7 @@ public class IntegrationTestSetup implements AutoCloseable {
     private final UdfTestSetup udfTestSetup;
     private final ConnectionDefinition connectionDefinition;
 
+    @SuppressWarnings("this-escape") // Acceptable in tests
     public IntegrationTestSetup(final ExasolTestSetup exasolTestSetup, final AdlsTestSetup adlsTestSetup,
             final DataLakeFileSystemClient adlsContainer)
             throws SQLException, BucketAccessException, TimeoutException, FileNotFoundException {
