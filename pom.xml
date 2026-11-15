@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>azure-data-lake-storage-gen2-document-files-virtual-schema</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
     <name>Virtual Schema for document data in files on Azure Data Lake Storage Gen 2</name>
     <description>Adapter for document data access from files from Azure Data Lake Storage Gen 2.</description>
     <url>https://github.com/exasol/azure-data-lake-storage-gen2-document-files-virtual-schema/</url>
@@ -33,7 +33,7 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-bom</artifactId>
-                <version>4.2.19.Final</version>
+                <version>4.2.20.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -47,7 +47,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson</groupId>
                 <artifactId>jackson-bom</artifactId>
-                <version>2.22.4</version>
+                <version>2.23.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -75,17 +75,17 @@
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-storage-file-datalake</artifactId>
-            <version>12.29.0</version>
+            <version>12.30.2</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-identity</artifactId>
-            <version>1.18.7</version>
+            <version>1.19.0</version>
         </dependency>
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-core</artifactId>
-            <version>1.60.0</version>
+            <version>1.61.0</version>
         </dependency>
         <!-- Test dependencies -->
         <dependency>
@@ -117,7 +117,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>test-db-builder-java</artifactId>
-            <version>4.0.3</version>
+            <version>5.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -155,7 +155,7 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-jdk14</artifactId>
             <!-- com.azure:azure-core has a transitive dependency on org.slf4j:slf4j-api:jar:1.7.36, so we can't use version 2 here. -->
-            <version>1.7.36</version>
+            <version>2.0.20</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -191,7 +191,7 @@
             <plugin>
                 <groupId>com.exasol</groupId>
                 <artifactId>project-keeper-maven-plugin</artifactId>
-                <version>5.8.1</version>
+                <version>5.8.2</version>
                 <executions>
                     <execution>
                         <goals>
@@ -212,7 +212,7 @@
     <parent>
         <artifactId>azure-data-lake-storage-gen2-document-files-virtual-schema-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>4.0.0</version>
+        <version>4.0.1</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
 </project>
